@@ -1,0 +1,63 @@
+:root {
+    --Primario: #0002A1;
+    --Secundario: #FEB139;
+    --Complementario-A: #FB2576;
+    --Complementario-B: #FCD900;
+    --Complementario-C: #069A8E;
+    --Text-Op: #9e9e9e;
+}
+
+.carta-option{
+    width: 10rem;
+    height: 8rem;
+    text-align: center;
+    border-radius: 35px;
+    margin-top: 5px;
+    margin-right: 25px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenido-boton{
+    margin-top: 1rem;
+    display: block;
+}
+
+.carta-option i{
+    color: var(--Text-Op);
+    font-size: 2rem;
+}
+
+.carta-footer{
+    height: 1.9rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    border-radius:  0 0 8px 8px;
+}
+
+.carta-footer p{
+    font-size: 14px;
+    color: var(--Text-Op);
+}
+
+.carta-footer a{
+    color: white;
+    text-decoration: none;
+}
+
+#residencias:hover{
+    background-color: var(--Primario) !important;
+}
+
+#planeacion:hover{
+    background-color: var(--Complementario-B);
+}
+
+#reportes:hover{
+    background-color: var(--Complementario-A);
+}

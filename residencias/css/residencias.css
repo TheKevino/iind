@@ -1,0 +1,15 @@
+:root {
+    --Primario: #0002A1;
+    --Secundario: #FEB139;
+    --Complementario-A: #FB2576;
+    --Complementario-B: #FCD900;
+    --Complementario-C: #069A8E;
+    --Text-Op: #9e9e9e;
+}
+
+.boton{
+    padding: 10px;
+    width: 15rem;
+    border-radius: 8px;
+    border: none;
+}

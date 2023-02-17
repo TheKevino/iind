@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --Primario: #143F6B;
+    --Secundario: #FEB139;
+    --Complementario-A: #F55353;
+    --Complementario-B: #F6F54D;
+    --Complementario-C: #069A8E;
+  }
+  
+  body {
+    margin: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .TECNM{
+    position: absolute;
+    right: 0;
+    top:0;
+
+  }
+  
+  .contenedor {
+    width: 100%;
+    padding: 15px;
+  }
+  .formulario {
+    position: relative;
+    bottom: 150px;
+    background: #ffffff;
+    margin-top: 80px;
+    border: 1px solid rgba(185, 184, 184, 0.315);
+  }
+
+  h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+  }
+  .imgposition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .imgicon-form{
+    padding: 15px;
+    width: 150px;
+    height: auto;
+    border: 1px s;
+  }
+  input[type="text"],
+  input[type="password"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+  }
+  .input-contenedor{
+      margin-bottom: 15px;
+      border:1px solid black;
+  }
+  .icon{
+      min-width: 50px;
+      text-align: center;
+      color: #999;
+  }
+  .button{
+      border: none;
+      background-color: var(--Primario);
+      color: white;
+      width: 100%;
+      font-size: 20px;
+      padding: 15px 20px;
+      border-radius:5px;
+      cursor: pointer;
+  }
+  p{
+      text-align: center;
+  }
+  
+  .link{
+      text-decoration: none;
+      color: var(--Azul);
+      font-weight: 600;
+  }
+  .link:hover{
+      color: cadetblue;
+  }
+  @media(min-width:768px){
+      .formulario{
+          margin: auto;
+          width: 500px;
+          margin-top: 150px;
+          border-radius: 2%;
+      }
+  }
+
+.order{
+  display: flex;
+}

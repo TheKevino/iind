@@ -1,0 +1,27 @@
+:root {
+    --Primario: #143F6B;
+    --Secundario: #FEB139;
+    --Complementario-A: #F55353;
+    --Complementario-B: #F6F54D;
+    --Complementario-C: #069A8E;
+}
+
+.btn{ color: white !important; }
+
+.btn-principal{ background-color: var(--Primario) !important; }
+.btn-secundario{ background-color: var(--Secundario) !important; }
+.btn-editar{ background-color: var(--Secundario) !important; }
+.btn-borrar{ background-color: var(--Complementario-A) !important; }
+.btn-complementario-a{ background-color: var(--Complementario-A) !important; }
+.btn-complementario-b{ background-color: var(--Complementario-B) !important; }
+.btn-complementario-c{ background-color: var(--Complementario-C) !important; }
+
+.boton{
+    width: 22rem;
+    padding: 9px 11px 9px 11px;
+    color: white;
+    border: none;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+}

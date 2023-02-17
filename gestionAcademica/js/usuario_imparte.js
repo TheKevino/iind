@@ -1,0 +1,192 @@
+// --------VARIABLES DE LOS CONTENEDORES------------------
+let containerDocentes = document.getElementById('containerDocentes');
+let containerMaterias = document.getElementById('containerMaterias');
+let containerGrupos = document.getElementById('containerGrupos');
+let containerFechas = document.getElementById('containerFechas');
+let containerGuardar = document.getElementById('containerGuardar');
+let containerTable = document.getElementById('containerTable');
+let containerExcel = document.getElementById('containerExcel');
+
+//----------OBJETOS A UTILIZAR --------------------------
+var docente ={
+    id: null,
+    nombre: null
+}
+
+var materia ={
+    id: null,
+    nombre: null
+}
+
+var grupo ={
+    id: null,
+    nombre: null,
+    clave: null
+}
+
+//---------- CAMBIO DE PAGINAS --------------------------
+function paginaDocentes(){
+    containerDocentes.style.display = 'block';
+    containerMaterias.style.display = 'none';
+    containerGrupos.style.display = 'none';
+    containerFechas.style.display = 'none';
+    containerGuardar.style.display = 'block';
+    containerTable.style.display = 'block';
+    containerExcel.style.display = 'none';
+}
+
+function paginaMaterias(){
+    containerDocentes.style.display = 'none';
+    containerMaterias.style.display = 'block';
+    containerGrupos.style.display = 'none';
+    containerFechas.style.display = 'none';
+    containerGuardar.style.display = 'block';
+    containerTable.style.display = 'block';
+    containerExcel.style.display = 'none';
+}
+
+function paginaGrupos(){
+    containerDocentes.style.display = 'none';
+    containerMaterias.style.display = 'none';
+    containerGrupos.style.display = 'block';
+    containerFechas.style.display = 'none';
+    containerGuardar.style.display = 'block';
+    containerTable.style.display = 'block';
+    containerExcel.style.display = 'none';
+}
+
+function paginaFechas(){
+    containerDocentes.style.display = 'none';
+    containerMaterias.style.display = 'none';
+    containerGrupos.style.display = 'none';
+    containerFechas.style.display = 'block';
+    containerGuardar.style.display = 'block';
+    containerTable.style.display = 'block';
+    containerExcel.style.display = 'none';
+}
+
+function paginaExcel(){
+    containerDocentes.style.display = 'none';
+    containerMaterias.style.display = 'none';
+    containerGrupos.style.display = 'none';
+    containerFechas.style.display = 'none';
+    containerGuardar.style.display = 'none';
+    containerTable.style.display = 'none';
+    containerExcel.style.display = 'block';
+}
+
+//---------PARA LA TABLA DE USUARIOS/DOCENTES-----------------
+//metodos para que la tabla se recargue en tiempo real
+function obtener_registros(usuarios){
+    $.ajax({
+        url: 'gestionAcademica/controller/peticion_docentes.php',
+        type: 'POST',
+        dataType: 'html',
+        data: { usuarios: usuarios }
+    })
+    .done(function(resultado){
+        $("#tabla_usuarios").html(resultado);
+    });
+}
+
+$(document).on('click', '#btnBuscarUsuario', function(){
+    var valorBusqueda = $(document.getElementById('buscador_usuario')).val();
+    if(valorBusqueda != ""){
+        obtener_registros(valorBusqueda);
+    } else{
+        obtener_registros();
+    }
+});
+
+//---------PARA LA TABLA DE ASIGNATURAS-----------------
+
+function obtener_registros_materia(materias){
+    $.ajax({
+        url: 'gestionAcademica/controller/peticion_asignaturas.php',
+        type: 'POST',
+        dataType: 'html',
+        data: { materias: materias }
+    })
+    .done(function(resultado){
+        $("#tabla_materia").html(resultado);
+    });
+}
+
+$(document).on('click', '#btnBuscarMateria', function(){
+    var valorBusqueda = $(document.getElementById('buscador_materia')).val();
+    if(valorBusqueda != ""){
+        obtener_registros_materia(valorBusqueda);
+    } else{
+        obtener_registros_materia();
+    }
+});
+
+//---------PARA LA TABLA DE ASIGNATURAS-----------------
+
+function obtener_registros_grupo(grupos){
+    $.ajax({
+        url: 'gestionAcademica/controller/peticion_gruposAsignar.php',
+        type: 'POST',
+        dataType: 'html',
+        data: { grupos: grupos }
+    })
+    .done(function(resultado){
+        $("#tabla_grupos").html(resultado);
+    });
+}
+
+$(document).on('click', '#btnBuscarGrupo', function(){
+    var valorBusqueda = $(document.getElementById('buscador_grupo')).val();
+    if(valorBusqueda != ""){
+        obtener_registros_grupo(valorBusqueda);
+    } else{
+        obtener_registros_grupo();
+    }
+});
+
+//-----------ASIGNAR ELEMENTOS ------------
+function asignarDocente(id, nombre){
+    docente['id'] = id;
+    docente['nombre'] = nombre;
+    document.getElementById('docente').value = docente['nombre'];
+}
+
+function asignarMateria(id, nombre){
+    materia['id'] = id;
+    materia['nombre'] = nombre;
+    document.getElementById('asignatura').value = materia['nombre'];
+}
+
+function asignarGrupo(id, nombre, clave){
+    grupo['id'] = id;
+    grupo['nombre'] = nombre;
+    grupo['clave'] = clave;
+    document.getElementById('grupo').value = grupo['nombre'] + " (" + grupo['clave'] + ")";
+}
+
+//------------GUARDAR FORMULARIO-------------
+function guardarClase(){
+    let fecha_inicio = document.getElementById('fecha_inicio').value;
+    let fecha_fin = document.getElementById('fecha_fin').value;
+
+    if( docente['id'] == null || materia['id'] == null || grupo['id'] == null || grupo['id'] == null ){
+        alert("Faltan datos por seleccionar");
+    } else if ( fecha_inicio == null || fecha_fin == null ){
+        alert("Falta seleccionar las fechas");
+    } else if( fecha_inicio >= fecha_fin ){
+        alert("Fechas invalidas");
+    } else {
+        //para mandar la informacion a php
+        $.post('gestionAcademica/controller/alta_clase.php', { docente: docente['id'], asignatura: materia['id'], grupo: grupo['id'],
+            fecha_inicio: fecha_inicio, fecha_final: fecha_fin }, function(data){
+
+                if(data!=null){
+                    alert("Clase guardada");
+                    location.href ="redirection.php?op=14";
+                } else{
+                    alert("Error guardando la clase");
+                }
+
+        });
+    }
+} //fin metodo

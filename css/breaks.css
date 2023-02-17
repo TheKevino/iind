@@ -1,0 +1,16 @@
+/* CSS styling for before/after/avoid. */
+.break-before {
+    page-break-before: always;
+}
+
+.break-after {
+    page-break-after: always;
+}
+
+.break-avoid {
+    page-break-inside: avoid;
+}
+
+.fullpage {
+    height: 792pt;
+}

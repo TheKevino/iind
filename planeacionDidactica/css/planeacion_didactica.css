@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica';
+}
+:root {
+    --ancho: 80vw;
+}
+#generarPdf{ margin-top: 15px; }
+.main{
+    height: auto;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.container-items{
+    display: block;
+    width: var(--ancho);
+}
+
+.header{
+    width: 100vw;
+    height: 6rem;
+    margin-top: 10px;
+}
+
+.header img{
+    width: var(--ancho);
+    height: 5.7rem;
+}
+
+.header-text p{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 1px;
+}
+
+.header-text{
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.datos{
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.datos p{
+    margin: 3px;
+    font-size: 15px;
+}
+
+.datos-container{
+    width: var(--ancho);
+}
+
+.datos .datos-container .comodin{
+    width: 50vw;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.atributos{
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.atributos-container p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.atributos-container{
+    width: var(--ancho);
+}
+
+.atributos-info p{
+    font-size: 18px;
+    font-weight: normal;
+    margin: 8px;
+    text-align: justify;
+}
+
+.atributos-info{
+    width: var(--ancho);
+    height: auto;
+    border: solid 2px #000;
+}
+
+.table{
+    width: var(--ancho) !important;
+}
+
+.table-info{
+    margin-top: 20px;
+    width: var(--ancho);
+}
+
+.separator{
+    margin-top: 20px !important;
+    height: 1px !important;
+    border-bottom: 1px solid grey;
+    width: var(--ancho);
+}
+
+.volver-btn{
+    margin-top: 15px;
+    padding: 8px;
+    color: white;
+    border-radius: 10px;
+}
+
+.volver-btn:hover{
+    color: white;
+}

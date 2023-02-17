@@ -1,0 +1,27 @@
+td{
+    padding: 10px !important;
+    vertical-align: baseline !important;
+    align-content: flex-start !important;
+}
+
+table thead th{
+    vertical-align: middle !important;
+}
+
+table td:not([align]), table th:not([align]){
+    text-align: justify;
+}
+
+th{
+    text-align: center !important;
+}
+
+.tema-info{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+table tbody tr td:last-child{
+    text-align: center !important;
+    vertical-align: baseline !important;
+}

@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Primario: #143F6B;
+  --Secundario: #FEB139;
+  --Complementario-A: #F55353;
+  --Complementario-B: #F6F54D;
+  --Complementario-C: #069A8E;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* search */
+.contenedor-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.search {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+}
+input[type="text"]{
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+.icon {
+    padding: 5px;
+  min-width: auto;
+}
+/* Contenedor formulario */
+.ADDform{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  background: var(--Secundario);
+  border: none;
+}
+
+.btnform{
+  width: 500px;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.card-content {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  min-height: 200px;
+  font-weight: bold;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.card .info {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr auto;
+}
+.banner {
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.botones-cards{
+  position: absolute;
+  bottom: 10px;
+}
+
+.paginas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.paginas ul{
+  margin: 10px 0;
+  padding: 0;
+}
+.paginas li{
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+}
+
+.paginas li a{
+  background: rgb(228, 228, 228);
+  border-radius: 3px;
+  color: rgb(50, 50, 50);
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.actual{
+  background: var(--Primario) !important;
+  color: rgb(255, 255, 255) !important;
+}

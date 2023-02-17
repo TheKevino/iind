@@ -1,0 +1,13 @@
+:root {
+    --Primario: #143F6B;
+    --Secundario: #FEB139;
+    --Complementario-A: #F55353;
+    --Complementario-B: #F6F54D;
+    --Complementario-C: #069A8E;
+}
+
+.btn{ color: white !important; }
+
+#btnBuscarCarrera{
+    background-color: var(--Secundario);
+}

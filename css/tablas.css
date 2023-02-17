@@ -1,0 +1,78 @@
+:root {
+    --Primario: #0002A1;
+    --Primario-Light: #486998;
+    --Secundario: #FB2576;
+    --Complementario-A: #FB2576;
+    --Complementario-B: #FCD900;
+    --Complementario-C: #069A8E;
+}
+
+.article-form{
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.article-form form{
+    margin: 15px;
+}
+
+td, th{
+    padding: 10px !important;
+    vertical-align: middle !important;
+    align-content: center !important;
+}
+
+table td:not([align]), table th:not([align]){
+    text-align: center;
+}
+
+th{
+    background-color: var(--Primario) !important;
+    color: white !important;
+    text-align: center !important;
+}
+
+.is-current{
+    background-color: var(--Primario) !important;
+}
+
+table th:nth-child(1){
+    border-radius: 10px 0 0 0 !important;
+}
+
+table th:last-child{
+    border-radius: 0 10px 0 0 !important;
+}
+
+.tabla-reporte-final{
+    border: none !important;
+}
+
+.tabla-reporte-final tr:last-child td{
+    background-color: var(--Primario) !important;
+    color: white !important;
+}
+
+.tabla-reporte-final tr:last-child td:nth-child(1){
+    border-radius: 0 0 0 10px !important;
+}
+
+.tabla-reporte-final tr:last-child td:last-child{
+    border-radius: 0 0 10px 0 !important;
+}
+
+ul li {
+    list-style-type: none ;
+}
+
+ul li .nav-link {
+    text-decoration: none !important;
+}
+
+.drop-op{
+    color: white;
+    background-color: var(--Complementario-A);
+    padding: 8px;
+    border-radius: 7px;
+}

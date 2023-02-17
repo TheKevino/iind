@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgba(51, 51, 51, 1);
+}
+a{
+    text-decoration: none;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .formulario {
+    background: #ffffff;
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid rgba(185, 184, 184, 0.315);
+    font-family: Arial;
+  }
+.fechadoc{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+  .encargado{
+      font-size: 9.5px;
+  }
+
+
+  .formulario td{
+      padding: 4px;
+      margin: 5px;
+  }
+
+  .formulario img{
+      width: 110px;
+      height: 110px;
+  }
+
+  input{
+      width: 100%;
+  }
+
+  .info-departamental{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .jefe-depa{
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+  }
+
+  .jefe-depa h2{
+      font-size: 15px !important;
+    margin-top: 100%;
+  }
+
+  .sectionfirm h1{
+      font-size: 18px;
+      letter-spacing: 3vpx;
+  }
+  .sectionfirm h2{
+      font-size: 13px
+  }
+
+  .btnbefore{
+      background: #00800094;
+      color: white;
+      font-size: 20px;
+      width: 100px;
+      padding: 10px;
+      margin-top:2rem;
+      margin: 20px;
+  }
+
+  .btnbefore i{
+      margin: 3px;
+  }
+
+  .tablefirm td{
+    text-align: center;
+}
+
+.tablefirm img{
+    width: 130px;
+    height: 80px;
+}
+
+.tablefirm span, .tablefirm p {
+    font-size: 14px;
+}
+
+.sello{
+    height: 120px;
+    width: 120px;
+    border: 1px dashed black;
+    margin-right: 50px;
+}
+
+.footer{
+    font-size: small;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
