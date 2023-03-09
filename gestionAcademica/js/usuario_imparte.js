@@ -5,7 +5,6 @@ let containerGrupos = document.getElementById('containerGrupos');
 let containerFechas = document.getElementById('containerFechas');
 let containerGuardar = document.getElementById('containerGuardar');
 let containerTable = document.getElementById('containerTable');
-let containerExcel = document.getElementById('containerExcel');
 
 //----------OBJETOS A UTILIZAR --------------------------
 var docente ={
@@ -32,7 +31,6 @@ function paginaDocentes(){
     containerFechas.style.display = 'none';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
-    containerExcel.style.display = 'none';
 }
 
 function paginaMaterias(){
@@ -42,7 +40,6 @@ function paginaMaterias(){
     containerFechas.style.display = 'none';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
-    containerExcel.style.display = 'none';
 }
 
 function paginaGrupos(){
@@ -52,7 +49,6 @@ function paginaGrupos(){
     containerFechas.style.display = 'none';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
-    containerExcel.style.display = 'none';
 }
 
 function paginaFechas(){
@@ -62,7 +58,6 @@ function paginaFechas(){
     containerFechas.style.display = 'block';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
-    containerExcel.style.display = 'none';
 }
 
 function paginaExcel(){
@@ -72,12 +67,11 @@ function paginaExcel(){
     containerFechas.style.display = 'none';
     containerGuardar.style.display = 'none';
     containerTable.style.display = 'none';
-    containerExcel.style.display = 'block';
 }
 
 //---------PARA LA TABLA DE USUARIOS/DOCENTES-----------------
 //metodos para que la tabla se recargue en tiempo real
-function obtener_registros(usuarios){
+function obtener_registros_usuarios(usuarios){
     $.ajax({
         url: 'gestionAcademica/controller/peticion_docentes.php',
         type: 'POST',
@@ -85,16 +79,16 @@ function obtener_registros(usuarios){
         data: { usuarios: usuarios }
     })
     .done(function(resultado){
-        $("#tabla_usuarios").html(resultado);
+        $("#tabla_usuarios_clases").html(resultado);
     });
 }
 
-$(document).on('click', '#btnBuscarUsuario', function(){
-    var valorBusqueda = $(document.getElementById('buscador_usuario')).val();
+$(document).on('click', '#btnBuscarUsuarioClase', function(){
+    var valorBusqueda = $(document.getElementById('buscador_usuario_clase')).val();
     if(valorBusqueda != ""){
-        obtener_registros(valorBusqueda);
+        obtener_registros_usuarios(valorBusqueda);
     } else{
-        obtener_registros();
+        obtener_registros_usuarios();
     }
 });
 
@@ -182,7 +176,18 @@ function guardarClase(){
 
                 if(data!=null){
                     alert("Clase guardada");
-                    location.href ="redirection.php?op=14";
+                    asignarDocente(null, null);
+                    asignarMateria(null, null);
+                    asignarGrupo(null, null, null);
+
+                    document.getElementById("buscador_usuario_clase").value = "";
+                    document.getElementById("buscador_materia").value = "";
+                    document.getElementById("buscador_grupo").value = "";
+
+                    document.getElementById("docente").value = "Sin asignar";
+                    document.getElementById("asignatura").value = "Sin asignar";
+                    document.getElementById("grupo").value = "Sin asignar";
+
                 } else{
                     alert("Error guardando la clase");
                 }

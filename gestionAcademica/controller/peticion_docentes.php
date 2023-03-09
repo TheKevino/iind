@@ -16,11 +16,11 @@ $result = mysqli_query($conn, $query);
 
 if($result->num_rows > 0){
     $tabla.='
-    <table class="table table-bordered" id="tabla_resultados">
+    <table class="table table-striped table-bordered" id="tabla_resultados">
     <tr>
-        <td>Nombre completo</td>
-        <td>Usuario</td>
-        <td>Acciones</td>
+        <th>Nombre completo</th>
+        <th>Usuario</th>
+        <th>Acciones</th>
     </tr>';
 
     while($row = mysqli_fetch_array($result)){
@@ -33,7 +33,7 @@ if($result->num_rows > 0){
           <td>'.$nombreCompleto.'</td>
           <td>'.$row['usuario'].'</td>
           <td>
-            <button '.$docente.' class="btn btn-complementario-c m-2"><i class="fa fa-check"></i></button>
+            <button '.$docente.' class="btn-consulta m-2"><i class="fa fa-check"></i></button>
           </td>
         </tr>';
         

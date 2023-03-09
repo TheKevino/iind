@@ -144,21 +144,10 @@
 			}
 		}
 		
-		//$row[] = "<td><a class='btn btn-primary' href='residencias/Formularios/formulario1.php?id=".$aRow['idFormulario']."'><i class='fa fa-eye' aria-hidden='true'></i></a></td>";
-
-		/*Boton para ver el archivo
-		$row[] = "<td>
-					<a href='residencias/Formularios/formulario1.php?id=".base64_encode($aRow['idFormulario'])."'>
-						<button class='btn btn-secundario'>
-							<i class='fa fa-eye'></i>
-						</button>
-					</a>
-				</td>";
-		*/
 		if($user->getTipo()==2){
 
 			$row[] ='<li class="nav-item dropdown">
-			<a class="nav-link nav-title dropdown-toggle drop-op" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Acciones</a>
+			<a class="nav-link nav-title drop-op" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bx bx-dots-vertical-rounded"></i></a>
 			<ul class="dropdown-menu">
 
 			<li class="nav-item">
@@ -190,48 +179,28 @@
 			</ul>
 		  </li>';
 
-		  /*
+		} else{
+
+			$row[] ='<li class="nav-item dropdown">
+			<a class="nav-link nav-title drop-op" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="bx bx-dots-vertical-rounded"></i></a>
+			<ul class="dropdown-menu">
+
+			<li class="nav-item">
+				<a class="nav-link" href="residencias/Formularios/formulario1.php?id='.base64_encode($aRow["idFormulario"]).'" target="_blank">
+					Ver / Firmar
+		  		</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="residencias/Formularios/formulario_pdf.php?id='.base64_encode($aRow["idFormulario"]).'" target="_blank">
+					PDF
+				</a>
+			</li>
+
+			</ul>
+		  </li>';
 			
-			//Boton para el word
-			$row[] = "<td>
-						<a href='residencias/controller/generar_word.php?id=".$aRow['idFormulario']."'>
-							<button class='btn btn-principal'>
-								<i class='fa-solid fa-file-word' aria-hidden='true'></i>
-							</button>
-						</a>
-					</td>";
-
-			//Boton para Borrar
-			$row[] = "<td>
-						<a href='residencias/controller/baja_formulario.php?id=".$aRow['idFormulario']."'>
-							<button class='btn btn-borrar' onclick='return confirmacion()'>
-								<i class='fa fa-trash' aria-hidden='true'></i>
-							</button>
-						</a>
-					</td>";
-
-			//Boton para el Editar
-			$row[] = "<td>
-						<a href='residencias/views/editar_formulario.php?id=".$aRow['idFormulario']."' target='_blank'>
-							<button class='btn btn-secundario'>
-								<i class='fa fa-pen' aria-hidden='true'></i>
-							</button>
-						</a>
-					</td>";
-
-			*/
-		}		
-
-		//$row[] = "<td><a class='btn btn-primary' style='background-color:#f44336; color:white;' href='residencias/Formularios/formulario_pdf.php?id=".$aRow['idFormulario']."' target='_blank'><i class='fa fa-file-pdf-o'></i></a></td>";
-
-		//Boton para el PDF
-		$row[] = "<td>
-					<a href='residencias/Formularios/formulario_pdf.php?id=".base64_encode($aRow['idFormulario'])."' target='_blank'>
-						<button class='btn btn-complementario-a'>
-							<i class='fa fa-file-pdf-o'></i>
-						</button>
-					</a>
-				</td>";
+		}
 		
 		$output['aaData'][] = $row;
 	}

@@ -36,14 +36,17 @@ $result = mysqli_query($conn, $query);
 
 if($result->num_rows > 0){
     $tabla.='
-    <table class="table table-striped table-bordered mt-5" id="tabla_resultados">
-    <tr>
-        <th>Grupo</th>
-        <th>Carrera</th>
-        <th>Asignatura</th>
-        <th>Fecha de inicio</th>
-        <th>Fecha de terminacion</th>
-    </tr>';
+    <table class="table table-bordered mt-5" id="tabla_resultados">
+    <thead>
+        <tr>
+            <th>Grupo</th>
+            <th>Carrera</th>
+            <th>Asignatura</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de terminacion</th>
+        </tr>
+    </thead>
+    <tbody>';
 
     while($row = mysqli_fetch_array($result)){
         $fechaInicial = explode("-", $row['fechaInicio']); 
@@ -60,7 +63,7 @@ if($result->num_rows > 0){
         
     }
 
-    $tabla.="</table>";
+    $tabla.="</tbody></table>";
 } else {
     $tabla.="Sin historial";
 }

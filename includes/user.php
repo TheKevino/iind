@@ -9,6 +9,7 @@ class User extends DB{
     private $username;
     private $tipo;
     private $idAuxiliar;
+    private $primerNombre;
 
     public function userExist($user, $pass){
         $query = "SELECT * from empleados WHERE usuario = '$user' AND pass = '$pass' ";
@@ -32,6 +33,7 @@ class User extends DB{
             $this->nombre = $currentUser['paterno']." ".$currentUser['materno']." ".$currentUser['nombres'];
             $this->username = $currentUser['usuario'];
             $this->tipo = $currentUser['tipo'];
+            $this->primerNombre = $currentUser['nombres'];
         }
     }
 
@@ -41,6 +43,13 @@ class User extends DB{
 
     public function getNombre(){
         return $this->nombre;
+    }
+    public function getPrimerNombre(){
+        return $this->primerNombre;
+    }
+
+    public function getPaterno(){
+        return $currentUser['paterno'];
     }
 
     public function getTipo(){

@@ -4,8 +4,6 @@
   }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,50 +12,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="residencias/img/favicon.ico">
     <title>Login</title>
-    <link rel="stylesheet" href="residencias/css/login.css">
-    <script
-    src="https://kit.fontawesome.com/8eed7147bf.js"
-    crossorigin="anonymous"
-  ></script>
+    <link rel="stylesheet" href="residencias/css/jquery-ui.css">
+    <script src="residencias/js/jquery-ui.js"></script>
+    <script src="residencias/js/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/login.css">
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/brands.css" rel="stylesheet">
+    <link href="assets/css/solid.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body>
-  
-  <div class="banner">
-    <img class="TECNM" src="residencias/img/login/banner-img-login.jpg" alt="banner">
-    <img class="Sep" src="residencias/img/login/SEP.jpg" alt="banner">
-  </div>
 
-<div style=" margin-bottom:80px;">
-    <h2 style ="text-align:center;">Departamento de Ingeniería Industrial</h2>
-    <h3 style ="text-align:center;">Gestión de Calidad</h3>
-    <h3 style ="text-align:center;">Proceso Acádemico</h3>
-</div>
-     
-    <form action="redirection.php" method="post" class="formulario" style="margin-top: 200px;">
-        <h1>Iniciar sesión</h1>
-        <div class="imgposition">
-          <img class="imgicon-form" src="/img/login/iconlogin.png" alt="">
+  <div class="main">
+
+    <div class="info-container">
+
+      <div class="banner">
+
+        <div class="tec-logo">
+          <div class="images">
+            <img src="assets/Images/venado.png">
+            <img src="residencias/img/login/tec.png">
+          </div>
+          <div class="text-tec">
+            <p>Departamento de Ingeniería Industrial.</p>
+            <p>Gestión de calidad.</p>
+            <p>Proceso acádemico.</p>
+          </div>
         </div>
-        <div class="input-contenedor">
-          <i class="fa-solid fa-message icon"></i>
-          <input type="text" name="usuario" placeholder="Usuario" />
+
+      </div>
+
+      <div class="info-body">
+        <!-- INICIO CARRUSEL -->
+        <div class="slider position"></div>
+        <!-- FIN CARRUSEL -->
+      </div>
+
+    </div>
+
+    <form action="redirection.php" method="post" class="login-container">
+
+      <div class="contenedor">
+
+        <div class="cabecera">
+          <p class="text-login">Inicio de sesión</p>
+          <p class="text-secundario">¿No tienes cuenta?</p>
+          <p class="text-secundario">Pidela al jefe de departamento.</p>
         </div>
-  
-        <div class="input-contenedor">
-          <i class="fa-solid fa-key icon"></i>
-          <input type="password" name="pass" placeholder="Contraseña" />
+
+        <div class="cuerpo">
+          <div class="block-div">
+            <div class="input-wrapper" >
+              <input type="text" name="usuario" id="usuario" placeholder="Usuario" />
+              <i class="fa-regular fa-user input-icon" id="usericon"></i>
+            </div>
+          </div>
+          <div class="block-div">
+            <div class="input-wrapper password">
+              <input type="password" name="pass" id="pass" placeholder="Contraseña" />
+              <i class="fa-regular fa-lock input-icon" id="lockicon"></i>
+            </div>
+          </div>
         </div>
-        <input type="submit" value="Login" name="login" class="button">
+
+        <div class="boton">
+          <input type="submit" value="Acceder" name="login" class="button">
+        </div>
+
+      </div>
+      
     </form>
 
+  </div>
      <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted" >
+  <footer>
   
-  <section class="" style="background-color:#14406bf2; color: white; padding-top: 1px;" >
-    <div class="container text-center text-md-start mt-5" >
-      <div class="row mt-3">
+  <section>
+    <div class="container text-center text-md-start p-5" >
+      <div class="row">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">ARQUITECTOS DE SOFTWARE
           </h6>
@@ -83,10 +118,12 @@
   </section>
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color:#143f6b; color: white;">
-    © 2022 Copyright: DeptoIndustrial
+  <div class="text-center p-4" style="background-color:#1d1b31; color: white;">
+    © 2023 Copyright: Depto. Ing. Industrial
   </div>
   <!-- Copyright -->
 </footer>
+
+  <script src="js/login.js"></script>
 </body>
 </html>

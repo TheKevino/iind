@@ -1,66 +1,54 @@
-<div class="index-window">
+    <h2>Residencias profesionales</h2>
+    <?php if($user->getTipo() == 2){ ?>
 
-  <div class="article-form mt-3">
+    <div class="buttons-header cabecera-flotante">
 
-  <?php if($user->getTipo() == 2){ ?>
-
-    <div class="col-md-5">
-      <div class="row col-md-12">
-
-        <div class="col-md-6">
-          <form class="ADDform" action="redirection.php?op=6" method="POST">
-            <button class="boton btn-complementario-c">
-              <i class="fa fa-file-excel-o"></i>
+      <form action="redirection.php?op=6" method="POST">
+            <button class="boton btn-excel">
+              <i class='bx bx-file'></i>
               &nbsp;&nbsp;
-              Excel
+              Descargar en Excel
             </button>
-          </form>
-        </div>
+      </form>
 
-        <div class="col-md-6">
-          <form class="ADDform" action="redirection.php?op=5" method="POST">
-            <button class="boton btn-principal">
-              <i class="fa fa-plus"></i>
+      <form action="redirection.php?op=5" method="POST">
+            <button class="boton btn-formulario">
+              <i class='bx bx-plus'></i>
               &nbsp;&nbsp;
               Nuevo Formulario
             </button>
-          </form>
-        </div>
-
-      </div>
+      </form>
     </div>
 
-  </div>
+    <?php } ?>
 
-  <?php } ?>
+    <div class="fondo-flotante">
 
-  <div class="container">
+      <div class="row table-responsive">
 
-    <div class="row table-responsive">
+            <table class="table" id="tabla-residencias">
 
-          <table class="compact table table-striped" id="tabla">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>N.C</th>
+                  <th>Paterno</th>
+                  <th>Materno</th>
+                  <th>Nombre(s)</th>
+                  <th>Producto</th>
+                  <th>Proyecto</th>
+                  <th>...</th>
+                </tr>
+              </thead>
 
-            <thead>
-              <tr>
-                <th>No. Formulario</th>
-                <th>N. Control</th>
-                <th>Ap. Paterno</th>
-                <th>Ap. Materno</th>
-                <th>Nombre(s)</th>
-                <th>Producto</th>
-                <th>Nombre del proyecto</th>
-                <th>...</th>
-              </tr>
-            </thead>
+              <tbody>
+              </tbody>
 
-            <tbody>
-            </tbody>
-
-          </table>
-          
+            </table>
+            
       </div>
 
-  </div>
+    </div>
 
   <script src="residencias/js/index.js"></script>
 
@@ -75,4 +63,3 @@
           }
       }
     </script>
-</div>

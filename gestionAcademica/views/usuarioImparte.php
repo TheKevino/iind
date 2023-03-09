@@ -1,54 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="residencias/img/favicon.ico">
-    <title>Crear clase</title>
-    <link rel="stylesheet" href="residencias/css/jquery-ui.css">
-    <script src="residencias/js/jquery-ui.js"></script>
-    <script src="residencias/js/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/paleta.css">
-    <!-- Extend Icon -->
-    <script
-      src="https://kit.fontawesome.com/8eed7147bf.js"
-      crossorigin="anonymous"
-    ></script>
-</head>
-<body>
+<div>
+    <style>
 
-<style>
+        .contenedor-crear-clase{
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    .contenedor{
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+        .pagination{
+            text-align: center;
+            margin: 30px 30px 60px;
+            user-select: none;
+        }
 
-    .pagination{
-        text-align: center;
-        margin: 30px 30px 60px;
-        user-select: none;
-    }
+        .btn-page{
+            border: none;
+            background-color: transparent;
+            color: #1d1b31;
+            border: 2px #1d1b31 solid;
+            margin: 5px;
+            padding: 5px 10px;
+        }
 
-    .btn-page{
-        border: none;
-        color: #143F6B;
-        margin: 5px;
-        padding: 5px 10px;
-    }
-
-</style>
-
-    <!-- Navbar -->
-  <?php include('navigator.php'); ?>
-
+    </style>
+    <h3>Crear clase</h3>
   <!-- Formulario -->
-    <div class="contenedor">
+    <div class="contenedor-crear-clase">
         <div class="pagination">
             <button onclick="paginaDocentes()" class="btn-page">Docente</button>
             <button onclick="paginaMaterias()" class="btn-page">Asignatura</button>
@@ -58,7 +37,7 @@
 
         <div class="row" id="containerGuardar">
             <div class="col-md-8">
-                <button class="btn btn-principal" onclick="guardarClase()">Guardar</button>
+                <button class="btn-consulta" onclick="guardarClase()">Guardar</button>
             </div>
         </div>
 
@@ -87,11 +66,11 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_usuario" id="buscador_usuario" placeholder="Apellidos, nombre, usuario, etc">
+                    <input type="text" class="form-control" name="buscador_usuario_clase" id="buscador_usuario_clase" placeholder="Apellidos, nombre, usuario, etc">
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn btn-secundario btn-block" name="btnBuscarUsuario" id="btnBuscarUsuario">Buscar</button>
+                    <button class="btn-consulta" name="btnBuscarUsuarioClase" id="btnBuscarUsuarioClase">Buscar</button>
                 </div>
 
             </div>
@@ -99,7 +78,7 @@
             <div class="row col-md-12 mt-2">
                 
                 <div class="col-md-12">
-                    <section id="tabla_usuarios">
+                    <section id="tabla_usuarios_clases">
 
                     </section>
                 </div>
@@ -118,7 +97,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn btn-secundario btn-block" name="btnBuscarMateria" id="btnBuscarMateria">Buscar</button>
+                    <button class="btn-consulta" name="btnBuscarMateria" id="btnBuscarMateria">Buscar</button>
                 </div>
 
             </div>
@@ -145,7 +124,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn btn-secundario btn-block" name="btnBuscarGrupo" id="btnBuscarGrupo">Buscar</button>
+                    <button class="btn-consulta" name="btnBuscarGrupo" id="btnBuscarGrupo">Buscar</button>
                 </div>
 
             </div>
@@ -182,7 +161,5 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="gestionAcademica/js/usuario_imparte.js"></script>
-</body>
-</html>
+</div>

@@ -187,99 +187,93 @@
 		$usuario = base64_encode($idUsuario);
 		
 		if($user->getTipo()==1){
-			//$row[] = "<td><a class='btn btn-primary' href='reporteFinalCurso/views/ver_reporte.php?id=".$aRow['idReporte']."&idUs=".$idUsuario."' target='_blank'><i class='fa fa-eye'></i></a></td>";
-
-			$row[] = "<td>
-						<a href='reporteFinalCurso/views/ver_reporte.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
-							<button class='btn btn-secundario'>
-								<i class='fa fa-eye'></i>
-							</button>
-						</a>
-					</td>";
-
-			//$row[] = "<td><a class='btn btn-primary' href='reporteFinalCurso/editForm/editar_reporte.php?id=".$aRow['idReporte']."' style='background-color:gray;'><i class='fa fa-pen'></i></a></td>";
 
 			if($aRow['estado'] == 'pendiente'){
-				$row[] = "<td>
-							<a href='reporteFinalCurso/editForm/editar_reporte.php?id=".$reporte."'>
-								<button class='btn btn-secundario'>
-									<i class='fa fa-pen'></i>
-								</button>
-							</a>
-						</td>";
 
-				//$row[] = "<td><a class='btn btn-primary' href='reporteFinalCurso/views/agregar_asignatura.php?id=".$aRow['idReporte']."&idUs=".$idUsuario."' style='background-color:#66bb6a; color:white;' target='_blank'><i class='fa fa-plus'></i></a></td>";
+				$row[] = "
+							<li class='nav-item dropdown'>
+								<a class='nav-link nav-title drop-op' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'><i class='bx bx-dots-vertical-rounded'></i></a>
+								<ul class='dropdown-menu'>
 
-				$row[] = "<td>
-							<a href='reporteFinalCurso/views/agregar_asignatura.php?id=".$reporte."&idUs=".$usuario."'>
-								<button class='btn btn-complementario-c'>
-									<i class='fa fa-plus'></i>
-								</button>
-							</a>
-						</td>";
-						
-						
-				$row[] = "<td>
-								<a href='reporteFinalCurso/controller/baja_reporte.php?id=".$aRow['idReporte']."'>
-									<button class='btn btn-borrar' onclick='return confirmacion()'>
-										<i class='fa fa-trash' aria-hidden='true'></i>
-									</button>
-								</a>
-							</td>";
-			} else{
-				$row[] = "<td></td>";
-				$row[] = "<td></td>";
-				$row[] = "<td></td>";
+									<li class='nav-item'>
+										<a class='nav-link active' href='reporteFinalCurso/views/ver_reporte.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
+											Ver
+										</a>
+									</li>
+							
+									<li class='nav-item'>
+										<a class='nav-link active' href='reporteFinalCurso/editForm/editar_reporte.php?id=".$reporte."'>
+											Editar info.
+										</a>
+									</li>
+									
+									<li class='nav-item'>
+										<a class='nav-link active' href='reporteFinalCurso/views/agregar_asignatura.php?id=".$reporte."&idUs=".$usuario."'>
+											Agregar Asignatura
+										</a>
+									</li>
+									
+									<li class='nav-item'>
+										<a class='nav-link active' href='reporteFinalCurso/controller/baja_reporte.php?id=".$aRow['idReporte']."'>
+											<button class='btn btn-borrar' onclick='return confirmacion()'>
+												Borrar
+											</button>
+										</a>
+									</li>
+									
+									<li class='nav-item'>
+										<a class='nav-link active' href='reporteFinalCurso/pdfs/reporte_final.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
+											PDF
+										</a>
+									</li>
+								</ul>
+							</li>";
+			} else {
+
+				$row[] = "
+							<li class='nav-item dropdown'>
+								<a class='nav-link nav-title drop-op' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'><i class='bx bx-dots-vertical-rounded'></i></a>
+								<ul class='dropdown-menu'>
+
+								<li class='nav-item'>
+									<a class='nav-link active' href='reporteFinalCurso/views/ver_reporte.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
+										Ver
+									</a>
+								</li>
+									
+								<li class='nav-item'>
+									<a class='nav-link active' href='reporteFinalCurso/pdfs/reporte_final.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
+										PDF
+									</a>
+								</li>
+
+								</ul>
+							</li>";
+
 			}
-
-			//$row[] = "<td><a class='btn btn-primary' href='reporteFinalCurso/pdfs/reporte_final.php?id=".$aRow['idReporte']."&idUs=".$idUsuario."' style='background-color:#f44336; color:white;' target='_blank'><i class='fa fa-file-pdf-o'></i></a></td>";
-
-			$row[] = "<td>
-						<a href='reporteFinalCurso/pdfs/reporte_final.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
-							<button class='btn btn-complementario-a'>
-								<i class='fa fa-file-pdf-o'></i>
-							</button>
-						</a>
-					</td>";
 
 		}	else{
 
-			$row[] ='<li class="nav-item dropdown">
-			<a class="nav-link nav-title dropdown-toggle drop-op" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Acciones</a>
-			<ul class="dropdown-menu">
+				$row[] = "<li class='nav-item dropdown'>
+							<a class='nav-link nav-title drop-op' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'><i class='bx bx-dots-vertical-rounded'></i></a>
+							<ul class='dropdown-menu'>
+				
+								<li class='nav-item'>
+									<a class='nav-link active' href='reporteFinalCurso/controller/baja_reporte.php?id=".$aRow['idReporte']."'>
+										<button class='btn btn-borrar' onclick='return confirmacion()'>
+											Borrar
+										</button>
+									</a>
+								</li>
+					
+								<li class='nav-item'>
+								<a class='nav-link active' href='reporteFinalCurso/pdfs/reporte_final.php?id=".$reporte."&idUs=".base64_encode($aRow['idUsuario'])."' target='_blank'>
+										PDF
+									</a>
+								</li>
 
-			  <li class="nav-item">
-				<a href="reporteFinalCurso/controller/baja_reporte.php?id='.$aRow["idReporte"].'">
-					<button class="btn btn-borrar" onclick="return confirmacion()">
-						Borrar
-					</button>
-		  		</a>
-			</li>
-
-			<li class="nav-item">
-				<a class="nav-link" href="reporteFinalCurso/pdfs/reporte_final.php?id='.$reporte.'&idUs='.base64_encode($aRow["idUsuario"]).'" target="_blank">
-					PDF
-				</a>
-		  	</li>
-
-			</ul>
-		  </li>';
-
-
-			//$row[] = "<td><a class='btn btn-primary' href='reporteFinalCurso/pdfs/reporte_final.php?id=".$aRow['idReporte']."&idUs=".$aRow['idUsuario']."' style='background-color:#f44336; color:white;' target='_blank'><i class='fa fa-file-pdf-o'></i></a></td>";
-/*
-			$row[] = "<td>
-
-				</td>";
-
-			$row[] = "<td>
-						<a href='reporteFinalCurso/pdfs/reporte_final.php?id=".$reporte."&idUs=".base64_encode($aRow['idUsuario'])."' target='_blank'>
-							<button class='btn btn-complementario-a'>
-								<i class='fa fa-file-pdf-o'></i>
-							</button>
-						</a>
-					</td>";
-*/
+							</ul>
+						</li>";
 		}
 
 		$output['aaData'][] = $row;

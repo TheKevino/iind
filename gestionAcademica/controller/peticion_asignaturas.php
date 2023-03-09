@@ -33,7 +33,7 @@ if($result->num_rows > 0){
           <td>'.$row['clave'].'</td>
           <td>'.utf8_decode($row['nombre']).'</td>
           <td>
-            <button '.$docente.' class="btn btn-complementario-c"><i class="fas fa-check"></i></button>
+            <button '.$docente.' class="btn-consulta"><i class="fas fa-check"></i></button>
           </td>
         </tr>';
         

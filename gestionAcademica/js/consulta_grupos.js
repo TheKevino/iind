@@ -1,6 +1,4 @@
-$(document).ready(obtener_registros());
-
-function obtener_registros(grupos){
+function obtener_registros_grupo_consulta(grupos){
     $.ajax({
         url: 'gestionAcademica/controller/peticion_grupos.php',
         type: 'POST',
@@ -8,15 +6,15 @@ function obtener_registros(grupos){
         data: { grupos: grupos }
     })
     .done(function(resultado){
-        $("#tabla_grupos").html(resultado);
+        $("#tabla_grupos_consulta").html(resultado);
     });
 }
 
-$(document).on('click', '#btnBuscarGrupo', function(){
-    var valorBusqueda = $(document.getElementById('buscador_grupo')).val();
+$(document).on('click', '#btnBuscarGrupoConsulta', function(){
+    var valorBusqueda = $(document.getElementById('buscador_grupo_consulta')).val();
     if(valorBusqueda != ""){
-        obtener_registros(valorBusqueda);
+        obtener_registros_grupo_consulta(valorBusqueda);
     } else{
-        obtener_registros();
+        obtener_registros_grupo_consulta();
     }
 })

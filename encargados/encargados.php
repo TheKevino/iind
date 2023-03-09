@@ -1,11 +1,4 @@
 <?php
-
-if(!isset($_SESSION['user'])){
-    header('Location: login.php');
-}
-
-include('includes/db.php');
-
 //Query para los encargados
 $jefeDivEstudiosProf;
 $jefeDeptoIngIndustrial;
@@ -18,50 +11,29 @@ $jefeDivEstudiosProf = $row['jefeDivisionEstudiosProf'];
 $jefeDeptoIngIndustrial = $row['jefeDeptoIngInd'];
 
 ?>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar encargados</title>
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"/>
-      <link
-      href="css/paleta.css" rel="stylesheet"/>
-    <!-- Extend Icon -->
-    <script
-      src="https://kit.fontawesome.com/8eed7147bf.js"
-      crossorigin="anonymous"
-    ></script>
-</head>
-<body>
+<div>
 
 <style>
 
-    .contenedor{
+    .contenedor-encargados{
         height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width:100%;
     }
 
-    form{
-        width:100vw;
+    .btn-editar-encargados{
+        background-color: #1d1b31;
+        color: white;
+        width: 15rem;
+        border-radius: 5px;
     }
 
 </style>
 
-<!-- Navbar -->
-<?php include('navigator.php'); ?>
-
-
-    <form class="contenedor" action="encargados/editar_encargados.php" method="POST">
+    <form class="contenedor-encargados" action="encargados/editar_encargados.php" method="POST">
     
         <div class="card card-body col-md-8 mt-4">
 
@@ -85,13 +57,10 @@ $jefeDeptoIngIndustrial = $row['jefeDeptoIngInd'];
         <!-- Boton -->
         <div class="row mt-2">
             <div class="col-md-8">
-                <input type="submit" class="btn btn-secundario" name="btnEditarEncargados" id="btnEditarEncargados" value="Editar">
+                <input type="submit" class="btn-editar-encargados" name="btnEditarEncargados" id="btnEditarEncargados" value="Editar">
             </div>
         </div>
 
     </form>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-</html>
+</div>

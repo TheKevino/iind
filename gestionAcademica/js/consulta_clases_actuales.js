@@ -1,6 +1,6 @@
-$(document).ready(obtener_registros());
+$(document).ready(obtener_registros_clases_actuales());
 
-function obtener_registros(clases){
+function obtener_registros_clases_actuales(clases){
     $.ajax({
         url: 'gestionAcademica/controller/peticion_clases_actuales.php',
         type: 'POST',
@@ -8,6 +8,6 @@ function obtener_registros(clases){
         data: { clases: clases }
     })
     .done(function(resultado){
-        $("#tabla_clases").html(resultado);
+        $("#tabla_clases_actuales").html(resultado);
     });
 }

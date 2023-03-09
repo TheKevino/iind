@@ -1,6 +1,4 @@
-$(document).ready(obtener_registros());
-
-function obtener_registros(carreras){
+function obtener_registros_carreras_consulta(carreras){
     $.ajax({
         url: 'gestionAcademica/controller/peticion_carreras.php',
         type: 'POST',
@@ -15,8 +13,8 @@ function obtener_registros(carreras){
 $(document).on('click', '#btnBuscarCarrera', function(){
     var valorBusqueda = $(document.getElementById('buscador_carrera')).val();
     if(valorBusqueda != ""){
-        obtener_registros(valorBusqueda);
+        obtener_registros_carreras_consulta(valorBusqueda);
     } else{
-        obtener_registros();
+        obtener_registros_carreras_consulta();
     }
 })

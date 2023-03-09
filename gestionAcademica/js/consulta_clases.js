@@ -1,5 +1,3 @@
-$(document).ready(obtener_registros());
-
 function obtener_registros(clases){
     $.ajax({
         url: 'gestionAcademica/controller/peticion_clases.php',

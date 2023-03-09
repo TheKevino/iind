@@ -1,11 +1,18 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --Primario: #0002A1;
+    --Primario: #1d1b31;
     --Primario-Light: #486998;
-    --Secundario: #FB2576;
-    --Complementario-A: #FB2576;
-    --Complementario-B: #FCD900;
+    --Secundario: #0002A1;
+    --Complementario-A: #FF2E19;
+    --Complementario-B: #FFDA0D;
     --Complementario-C: #069A8E;
+    --bc-color: #f2f2f2;
+    --card-color: white;
 }
+
+.sorting::before{ visibility: hidden !important; }
 
 .article-form{
     width: 100%;
@@ -17,10 +24,21 @@
     margin: 15px;
 }
 
-td, th{
+table{
+    background-color: transparent !important;
+    border: none;
+}
+
+tr{
+    background-color: var(--card-color) !important;
+}
+
+td{
     padding: 10px !important;
-    vertical-align: middle !important;
     align-content: center !important;
+    vertical-align: middle !important;
+    color: #424242 !important;
+    font-size: 16px;
 }
 
 table td:not([align]), table th:not([align]){
@@ -28,21 +46,17 @@ table td:not([align]), table th:not([align]){
 }
 
 th{
-    background-color: var(--Primario) !important;
-    color: white !important;
+    background-color: transparent !important;
+    color: var(--Primario) !important;
     text-align: center !important;
+    padding: 25px !important;
+    vertical-align: middle !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
 }
 
 .is-current{
     background-color: var(--Primario) !important;
-}
-
-table th:nth-child(1){
-    border-radius: 10px 0 0 0 !important;
-}
-
-table th:last-child{
-    border-radius: 0 10px 0 0 !important;
 }
 
 .tabla-reporte-final{
@@ -55,11 +69,11 @@ table th:last-child{
 }
 
 .tabla-reporte-final tr:last-child td:nth-child(1){
-    border-radius: 0 0 0 10px !important;
+    border-radius: 0 0 0 5px !important;
 }
 
 .tabla-reporte-final tr:last-child td:last-child{
-    border-radius: 0 0 10px 0 !important;
+    border-radius: 0 0 5px 0 !important;
 }
 
 ul li {
@@ -72,7 +86,8 @@ ul li .nav-link {
 
 .drop-op{
     color: white;
-    background-color: var(--Complementario-A);
-    padding: 8px;
-    border-radius: 7px;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--Primario) !important;
+    border-radius: 5px;
+    font-size: 16px;
 }

@@ -1,6 +1,5 @@
-$(document).ready(obtener_registros());
 
-function obtener_registros(materias){
+function obtener_registros_materias_consulta(materias){
     $.ajax({
         url: 'gestionAcademica/controller/peticion_materias.php',
         type: 'POST',
@@ -15,8 +14,8 @@ function obtener_registros(materias){
 $(document).on('click', '#btnBuscarMateria', function(){
     var valorBusqueda = $(document.getElementById('buscador_materia')).val();
     if(valorBusqueda != ""){
-        obtener_registros(valorBusqueda);
+        obtener_registros_materias_consulta(valorBusqueda);
     } else{
-        obtener_registros();
+        obtener_registros_materias_consulta();
     }
 })

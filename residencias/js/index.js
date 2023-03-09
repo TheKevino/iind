@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#tabla").DataTable({
+    $("#tabla-residencias").DataTable({
         "order": [[2, "asc"]],
 			"language":{
 				"lengthMenu": "Mostrar _MENU_ registros por pagina",

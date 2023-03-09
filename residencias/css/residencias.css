@@ -1,15 +1,27 @@
 :root {
-    --Primario: #0002A1;
+    --Primario: #6358ee;
     --Secundario: #FEB139;
-    --Complementario-A: #FB2576;
-    --Complementario-B: #FCD900;
+    --Complementario-A: #ED7A6F;
+    --Complementario-B: #EDD240;
     --Complementario-C: #069A8E;
     --Text-Op: #9e9e9e;
 }
 
 .boton{
-    padding: 10px;
     width: 15rem;
-    border-radius: 8px;
+    border-radius: 5px;
+}
+
+.btn-formulario{
+    background-color: var(--Primario);
+    color: white;
     border: none;
+    padding: 10px;
+}
+
+.btn-excel{
+    background-color: white;
+    color: var(--Primario);
+    border: 2px var(--Primario) solid;
+    padding: 8.5px;
 }

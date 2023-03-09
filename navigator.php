@@ -1,7 +1,7 @@
 <!-- Navbar -->
-  <nav class="navbar navbar-dark">
+<nav class="navbar navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="redirection.php?op=0"><i class="fa fa-home">&nbsp;</i>  Usuario: <?php echo $user->getNombre(); ?></a>
+      <a class="navbar-brand" href="redirection.php?op=0"><i class="fa fa-home"></i>&nbsp;&nbsp;<?php echo $user->getNombre(); ?></a>
       <ul class="nav justify-content-end">
       <li class="nav-item">
           <a class="nav-link nav-title" href="redirection.php?op=7">Encargados</a>
@@ -65,8 +65,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link nav-title" href="logout.php">Cerrar sesion</a>
+          <a class="nav-link nav-title" href="logout.php">Cerrar sesión</a>
         </li>
       </ul>
     </div>
-  </nav>
+</nav>

@@ -180,35 +180,8 @@
 		$idUser = base64_encode($user->getIdUsuario());
 		$idPlaneacion = base64_encode($aRow['idPlaneacion']);
 
-		if($user->getTipo()==1){
-
-			$row[] ='<div class="btn-group">
-			<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Action
-				</button>
-				<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Separated link</a>
-				</div>
-			</div>';
-
-			/*
-			$row[] = "<td>
-						<a href='planeacionDidactica/views/ver_planeacion.php?id=".$idPlaneacion."&idu=".$idUser."' target='_blank'>
-							<button class='btn btn-secundario'>
-								<i class='fa fa-eye'></i>
-							</button>
-						</a>
-					</td>";
-			*/
-		}
-
-		if($user->getTipo()==2){
 			$row[] ='<li class="nav-item dropdown">
-			<a class="nav-link nav-title dropdown-toggle drop-op" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Acciones</a>
+			<a class="nav-link nav-title drop-op" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bx bx-dots-vertical-rounded"></i></a>
 			<ul class="dropdown-menu">
 
 			  <li class="nav-item">
@@ -239,33 +212,6 @@
 
 			</ul>
 		  </li>';
-		}
-
-		/*
-		$row[] = "<td>
-				<a href='planeacionDidactica/editForm/edit_planeacion_didactica.php?id=".$idPlaneacion."&idu=".base64_encode($aRow['idUsuario'])."' target='_blank'>
-					<button class='btn btn-secundario'>
-						<i class='fa fa-pen'></i>
-					</button>
-				</a>
-			</td>";
-
-		$row[] = "<td>
-					<a href='planeacionDidactica/controller/baja_planeacion.php?id=".$idPlaneacion."'>
-						<button class='btn btn-borrar' onclick='return confirmacion()'>
-							<i class='fa fa-trash'></i>
-						</button>
-					</a>
-				</td>";
-
-		$row[] = "<td>
-			<a href='planeacionDidactica/pdfs/planeacion_tcpdf.php?id=".$idPlaneacion."&idu=".base64_encode($aRow['idUsuario'])."' target='_blank'>
-				<button class='btn btn-complementario-a'>
-					<i class='fa fa-file-pdf-o'></i>
-				</button>
-			</a>
-		</td>";
-		*/
 	
 		$output['aaData'][] = $row;
 	}

@@ -1,26 +1,8 @@
-<div class="index-window">
-
-  <?php
-    include_once('includes/user.php');
-
-    if($user->getTipo() == 2){
-      include('navigator.php');
-    } else{
-      include('user_navigator.php');
-    }
-  ?>
-        <!-- Buscador -->
-  <div class="articleform">
-
+  <h2>Reporte final del curso</h2>
   <?php if($user->getTipo() == 1){ ?>
-    <!--
-    <div class="ADDform">
-      <a href="redirection.php?op=18" class="btn btn-success btnform mt-4">Nuevo reporte final</a>
-    </div>
-    -->
 
-    <form class="ADDform mt-3" action="redirection.php?op=18" method="POST">
-      <button class="boton btn-principal" id="btnFormulario">
+    <form class="buttons-header cabecera-flotante" action="redirection.php?op=18" method="POST">
+      <button class="boton btn-formulario" id="btnFormulario">
         <i class="fa fa-plus"></i>
         &nbsp;&nbsp;
         Nuevo Reporte
@@ -29,15 +11,15 @@
 
   <?php } ?>
 
-  <div class="container">
+  <div class="fondo-flotante">
 
     <div class="row table-responsive">
 
-          <table class="table table-striped" id="tabla">
+          <table class="table" id="tabla-reporte">
 
             <thead>
               <tr>
-                <th>No. Reporte</th>
+                <th>No.</th>
                 <?php if($user->getTipo()==2){ ?> <!-- para mostrar nombre del docente -->
                 <th>Docente</th>
                 <?php } ?>
@@ -49,7 +31,7 @@
                 <th>Final del semestre</th>
                 <th>No. Grupos</th>
                 <th>Asign. Diferentes</th>
-                <th></th>
+                <th>...</th>
               </tr>
             </thead>
 
@@ -62,7 +44,7 @@
 
     </div>
 
-  </div>
+
 
 <script src="reporteFinalCurso/js/index.js"></script>
 
@@ -72,5 +54,3 @@
       return respuesta;
   }
   </script>
-  </body>
-</html>

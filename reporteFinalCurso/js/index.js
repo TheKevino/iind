@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#tabla").DataTable({
+    $("#tabla-reporte").DataTable({
         "order": [[0, "desc"]],
 			"language":{
 				"lengthMenu": "Mostrar _MENU_ registros por pagina",

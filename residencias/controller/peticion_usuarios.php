@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $query);
 
 if($result->num_rows > 0){
     $tabla.='
-    <table class="table table-bordered" id="tabla_resultados">
+    <table class="table table-bordered" id="tabla_resultados_consulta_usuarios">
     <tr>
         <th>ID</th>
         <th>Ap. Paterno</th>

@@ -1,0 +1,209 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --Primario: #1d1b31;
+    --Secundario: #FEB139;
+    --Complementario-A: #ED7A6F;
+    --Complementario-B: #FFDA0D;
+    --Complementario-C: #069A8E;
+    --Text-Op: #9e9e9e;
+    --img-banner-size: 7rem;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-container{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgb(17,16,29);
+    background: linear-gradient(90deg, rgba(17,16,29,1) 0%, rgba(48,36,71,1) 95%);
+}
+
+.login-container{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    height: 40%;
+    width: 100%;
+    padding: 20px;
+}
+
+/* COMIENZO SLIDER */
+.info-body {
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.slider {
+    height: 400px;
+    width: 400px;
+    background-image: url("../assets/Images/Office\ management-amico.png");
+    background-size: cover;
+    background-position: center center;
+    animation: animate 10s infinite;
+}
+
+@keyframes animate {
+    25% {
+        background-image: url("../assets/Images/Office\ management-cuate.png");
+        background-size: cover;
+        background-position: center center;
+    }
+    50% {
+        background-image: url("../assets/Images/Office\ management-rafiki.png");
+        background-size: cover;
+        background-position: center center;
+    }
+    75% {
+        background-image: url("../assets/Images/Task-bro.png");
+        background-size: cover;
+        background-position: center center;
+    }
+    100% {
+        background-image: url("../assets/Images/Office\ management-amico.png");
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* FIN SLIDER */
+
+.tec-logo{
+    width: 100%;
+    height: 100%;
+    align-items: baseline;
+    padding: 5px;
+}
+
+.images{
+    text-align: center;
+}
+
+.tec-logo img{
+    width: var(--img-banner-size);
+    height: var(--img-banner-size);
+}
+
+.text-tec p{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.contenedor{
+    width: 70%;
+    height: 60%;
+}
+
+.cabecera, .cuerpo{
+    width: 100%;
+    height: 40%;
+}
+
+.boton{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button{
+    width: 100%;
+    height: 80%;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    background-color: var(--Primario);
+    border-radius: 5px;
+}
+
+.text-login{
+    color: var(--Primario);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.text-secundario{
+    color: var(--Text-Op);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.block-div{
+    width: 100%;
+    height: 50%;
+    align-items: center;
+}
+
+.block-div input{
+    width: 100%;
+    height: 3rem;
+    border: none;
+    font-size: 1.3rem;
+    padding: 2rem;
+    border-bottom: 2px var(--Text-Op) solid;
+    outline: none;
+    color: var(--Text-Op);
+}
+
+.block-div input:focus {
+    border-bottom: 2px var(--Primario) solid;
+}
+
+.input-wrapper {
+    position: relative;
+    width: auto;
+ }
+
+ .input-icon {
+    color: var(--Text-Op);
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+ }
+
+ .input-wrapper i{
+    font-size: 1.3rem;
+    margin-top: 10px;
+ }
+
+ footer{
+    background-color: rgba(48,36,71,1);
+    color: white;
+ }

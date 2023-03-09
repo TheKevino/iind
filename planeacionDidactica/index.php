@@ -1,25 +1,21 @@
-
-<div class="index-window">
-        <!-- Buscador -->
-  <div class="articleform">
-
+  <h2>Planeacion e instrumentación didáctica</h2>
   <?php if($user->getTipo() == 1){ ?>
 
-    <form class="ADDform mt-3" action="redirection.php?op=19" method="POST">
-      <button class="boton btn-principal" id="btnFormulario">
+    <form class="buttons-header cabecera-flotante" action="redirection.php?op=19" method="POST">
+      <button class="boton btn-formulario" id="btnFormulario">
         <i class="fa fa-plus"></i>
         &nbsp;&nbsp;
-        Nueva Planeación Didactica
+        Nueva Planeación
       </button>
     </form>
 
   <?php } ?>
 
-  <div class="container">
+  <div class="fondo-flotante">
 
     <div class="row table-responsive">
 
-          <table class="table table-striped" id="tabla">
+          <table class="table" id="tabla-planeacion">
 
             <thead>
               <tr>
@@ -40,8 +36,6 @@
             </tbody>
 
           </table>
-          
-      </div>
 
     </div>
 
@@ -54,4 +48,3 @@
       return respuesta;
   }
   </script>
-</div>
