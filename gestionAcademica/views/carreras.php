@@ -1,16 +1,15 @@
-<div>
+<div class="contenedor-main">
    
-    <form class="formulario" action="gestionAcademica/controller/agregarCarrera.php" method="POST">
+    <form class="card card-body col-md-5 mt-4" action="gestionAcademica/controller/agregarCarrera.php" method="POST">
         <h3>Carreras</h3>
   
-          <div class="input-contenedor">
-            <i class="fa-solid fa-key icon"></i>
-            <input type="text" placeholder="Nombre de la carrera" name="carrera" id="carrera" />
+          <div class="row col-md-12 m-1">
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="Nombre de la carrera" name="carrera" id="carrera" />
+            </div>
           </div>
 
-          <div class="contenedorbtn">
-            <input type="submit" value="Agregar" class="button" name="btnAgregarCarrera" id="btnAgregarCarrera">
-          </div>  
+          <input type="submit" value="Agregar" class="button btn m-2" name="btnAgregarCarrera" id="btnAgregarCarrera">
           
     </form>
 

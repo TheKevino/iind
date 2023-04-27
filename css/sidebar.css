@@ -2,6 +2,7 @@
   --primary-color: #11101d;
   --primary-light: #1d1b31;
   --bc-color: #ebebeb;
+  --imagen-color: #695CFE;
 }
 
 /* Google Fonts Import Link */
@@ -184,7 +185,6 @@
 }
 .profile-details a{
   color:white;
-  margin-right: 25px;
   font-size: 24px;
 }
 
@@ -196,31 +196,34 @@
   align-items: center;
   justify-content: space-between;
   background: var(--primary-light);
-  padding: 12px 0;
+  padding: 12px;
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details{
   background: none;
-}
-.sidebar.close .profile-details{
   width: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sidebar .profile-details .profile-content{
   display: flex;
   align-items: center;
 }
-.sidebar .profile-details img{
+
+.sidebar .profile-details p{
   height: 42px;
   width: 42px;
-  object-fit: cover;
   border-radius: 16px;
-  margin: 0 14px 0 12px;
-  background: var(--primary-light);
-  transition: all 0.5s ease;
-}
-.sidebar.close .profile-details img{
+  margin: 0 14px 0 5px;
   padding: 5px;
+  background: var(--imagen-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
 }
+
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
   color: #fff;
@@ -238,7 +241,7 @@
 }
 .home-section{
   position: relative;
-  background: var(--bc-color);
+  background: transparent o !important;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);

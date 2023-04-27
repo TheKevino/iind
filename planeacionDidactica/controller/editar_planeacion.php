@@ -3,6 +3,7 @@
 include("../../includes/db.php");
 
 $idPlaneacion = $_GET['id'];
+$idUsuario = $_GET['idU'];
 $ids = $_POST['selectMateria'];
 
 $carrera = $_POST['selectCarrera'];
@@ -18,6 +19,6 @@ grupo = '$grupo', aula = '$aula', noSemanas = '$semana' WHERE idPlaneacion=$idPl
 
 $result = mysqli_query($conn, $query);
 
-header("Location: ../../redirection.php?op=planeacion");
+header("Location: ../editForm/edit_planeacion_didactica.php?id=".base64_encode($idPlaneacion)."&idu=".base64_encode($idUsuario));
 
 ?>

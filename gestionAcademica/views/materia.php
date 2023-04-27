@@ -10,60 +10,77 @@
 
 ?>
 
-<div>
+<div class="contenedor-main">
 
-      <form class="formulario" action="gestionAcademica/controller/agregarMateria.php" method="POST">
+      <div class="card card-body col-md-5 mt-4">
         
           <h3>Materia</h3>
             
-            <div class="input-contenedor">
-              <i class="fa-solid fa-message icon"></i>
+            <div class="row col-md-12">
+              <div class="col-md-12">
+                <select class="form-select m-2" name="selectCarrera" id="selectCarrera" >
+                  <!-- PARTE PARA LLENAR EL SELECT DEL FORMULARIO CON LAS CARRERAS -->
+                  <?php while($row = mysqli_fetch_array($result)){ ?>
 
-              <select name="selectCarrera" id="selectCarrera" >
-                <!-- PARTE PARA LLENAR EL SELECT DEL FORMULARIO CON LAS CARRERAS -->
-                <?php while($row = mysqli_fetch_array($result)){ ?>
-
-                  <option value=<?= $row['idCarrera']; ?>><?= $row['nombre']; ?></option>
-                        
-                <?php } ?>
-
-              </select>
+                    <option value=<?= $row['idCarrera']; ?>><?= $row['nombre']; ?></option>
+                          
+                  <?php } ?>
+                </select>
+              </div>
             </div>
 
-            <div class="input-contenedor">
-              <i class="fa-solid fa-key icon"></i>
-              <input type="text" name="claveMateria" id="claveMateria" placeholder="Clave de la materia" />
-            </div>
-    
-            <div class="input-contenedor">
-              <i class="fa-solid fa-key icon"></i>
-              <input type="text" name="nombreMateria" id="nombreMateria" placeholder="Nombre de la materia" />
-            </div>
+            <div class="row col-md-12">
+              <div class="col-md-4">
+                <input class="form-control m-2" type="text" name="claveMateria" id="claveMateria" placeholder="Clave de la materia" />
+              </div>
 
-            <div class="input-contenedor">
-              <i class="fa-solid fa-hashtag icon"></i>
-              <input type="text" name="satca" id="satca" placeholder="SATCA. Ej: 2-3-5" />
-            </div>
+              <div class="col-md-4">
+              <input class="form-control m-2" type="text" name="nombreMateria" id="nombreMateria" placeholder="Nombre de la materia" />
+              </div>
 
-            <textarea name="caracterizacion" id="caracterizacion" placeholder="Caracterización de la asignatura (Opcional)"></textarea>
-
-            <textarea name="intencion" id="intencion" placeholder="Intención didactica (Opcional)."></textarea>
-
-            <textarea name="previas" id="previas" placeholder="Competencias previas (Opcional)."></textarea>
-
-            <textarea name="genericas" id="genericas" placeholder="Competencias genericas (Opcional)."></textarea>
-
-            <textarea name="especificas" id="especificas" placeholder="Competencias especificas (Opcional)."></textarea>
-
-            <textarea name="fuentes" id="fuentes" placeholder="Fuentes de información (Opcional)."></textarea>
-
-            <textarea name="apDidacticos" id="apDidacticos" placeholder="Apoyos didacticos (Opcional)."></textarea>
-
-            <div class="contenedorbtn">
-              <input type="submit" value="Agregar" class="button" name="btnAgregarMateria" id="btnAgregarMateria">
+              <div class="col-md-4">
+              <input class="form-control m-2" type="text" name="satca" id="satca" placeholder="SATCA. Ej: 2-3-5" />
+              </div>
             </div>
 
-      </form>
+            <div class="row col-md-12">
+              <div class="col-md-12">
+                <textarea class="form-control m-2" name="caracterizacion" id="caracterizacion" placeholder="Caracterización de la asignatura (Opcional)"></textarea>
+              </div>
+            </div>
+
+            <div class="row col-md-12">
+              <div class="col-md-12">
+                <textarea class="form-control m-2" name="intencion" id="intencion" placeholder="Intención didactica (Opcional)."></textarea>
+              </div>
+            </div>
+
+            <div class="row col-md-12">
+              <div class="col-md-4">
+                <textarea class="form-control m-2" name="previas" id="previas" placeholder="Competencias previas (Opcional)."></textarea>
+              </div>
+
+              <div class="col-md-4">
+                <textarea class="form-control m-2" name="genericas" id="genericas" placeholder="Competencias genericas (Opcional)."></textarea>
+              </div>
+
+              <div class="col-md-4">
+                <textarea class="form-control m-2" name="especificas" id="especificas" placeholder="Competencias especificas (Opcional)."></textarea>
+              </div>
+            </div>
+
+            <div class="row col-md-12">
+              <div class="col-md-6">
+                <textarea class="form-control m-2" name="fuentes" id="fuentes" placeholder="Fuentes de información (Opcional)."></textarea>
+              </div>
+
+              <div class="col-md-6">
+                <textarea class="form-control m-2" name="apDidacticos" id="apDidacticos" placeholder="Apoyos didacticos (Opcional)."></textarea>
+              </div>
+            </div>
+
+            <button onclick="agregarMateria()" class="button btn m-2" name="btnAgregarMateria" id="btnAgregarMateria">Nuevo agregar</button>
+      </div>
 
         <script src="gestionAcademica/js/materias.js"></script>
 </div>

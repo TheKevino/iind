@@ -10,10 +10,10 @@ class Email{
     private $Port;
 
     public function __construct(){
-        $this->Host = "smtp-mail.outlook.com";
+        $this->Host = "smtp.hostinger.com";
         $this->SMTPAuth = true;
-        $this->Username = "deptoiind@outlook.com";
-        $this->Password = "Industrial2022";
+        $this->Username = "deptoindustrial@iind.online";
+        $this->Password = "Bonelessbbq1ndustrial$";
         $this->SMTPSecure = "STARTTLS";
         $this->Port = 587;
     }

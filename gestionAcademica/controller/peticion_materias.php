@@ -17,12 +17,14 @@ $result = mysqli_query($conn, $query);
 if($result->num_rows > 0){
     $tabla.='
     <table class="table table-striped table-bordered" id="tabla_resultados">
-    <tr>
-        <th>Carrera</th>
-        <th>Clave</th>
-        <th>Asignatura</th>
-        <th>Acciones</th>
-    </tr>';
+    <thead>
+        <tr>
+            <th>Carrera</th>
+            <th>Clave</th>
+            <th>Asignatura</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>';
 
     while($row = mysqli_fetch_array($result)){
         $tabla.='
@@ -32,16 +34,16 @@ if($result->num_rows > 0){
           <td>'.utf8_decode($row['nombre']).'</td>
           <td>
 
-                <a class="btn btn-principal m-1" href="gestionAcademica/views/temas.php?id='.$row['idMateria'].'" target="_blank">
+                <a class="btn m-1" href="gestionAcademica/views/temas.php?id='.$row['idMateria'].'" target="_blank">
                     <i class="fas fa-plus"></i>
                 </a>
 
-                <a class="btn btn-editar m-1" href="gestionAcademica/editForms/edit_materia.php?id='.$row['idMateria'].'">
+                <a class="btn m-1" href="gestionAcademica/editForms/edit_materia.php?id='.$row['idMateria'].'" target="_blank">
                     <i class="fas fa-marker"></i>
                 </a>
 
                 <a class="m-1" href="gestionAcademica/controller/baja_materia.php?id='.$row['idMateria'].'">
-                    <button class="btn btn-borrar" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+                    <button class="btn" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
                 </a>
 
           </td>

@@ -114,13 +114,23 @@
         </ul>
       </li>
 
-    <div class="profile-details">
-      <div class="profile-content">
-        <img src="assets/Images/user.png" alt="profileImg">
-      </div>
-      <div class="name-job">
-        <div class="profile_name"><?php echo $user->getPrimerNombre(); ?></div>
-      </div>
+      <div class="profile-details">
+        <div class="profile-content">
+          <p>
+          <?php 
+          $nombresUsuario = explode(" ", $user->getPrimerNombre());
+          if(isset($nombresUsuario[1])){
+            echo $nombresUsuario[0][0].$nombresUsuario[1][0];
+          } else {
+            echo $nombresUsuario[0][0];
+          }
+          ?>
+          </p>
+        </div>
+        <div class="name-job">
+          <div class="profile_name"><?php echo $user->getPrimerNombre(); ?></div>
+          <div class="job">Administrador</div>
+        </div>
       <a href="logout.php"><i class='bx bx-log-out' ></i></a>
     </div>
 

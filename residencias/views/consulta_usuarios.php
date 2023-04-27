@@ -1,20 +1,13 @@
-<?php 
-if(!isset($_SESSION['user']) || $user->getTipo()!=2){
-  header('Location: ../login.php');
-}
-
-?>
 <div>
-
   <style>
 
-      .contenedor-busqueda{
-          height: auto;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-      }
+        .contenedor-busqueda{
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
   </style>
 

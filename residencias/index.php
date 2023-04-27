@@ -11,7 +11,7 @@
             </button>
       </form>
 
-      <form action="redirection.php?op=5" method="POST">
+      <form action="redirection.php?op=5" method="POST" target="_blank">
             <button class="boton btn-formulario">
               <i class='bx bx-plus'></i>
               &nbsp;&nbsp;

@@ -85,6 +85,7 @@ $resultTemas = mysqli_query($conn, $queryTemas);
 
 // create new PDF document
 $pdf = new MYPDF('L', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+$pdf->SetTitle(mb_strtoupper($nombreMateria,'utf-8'));
 
 // set document information
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
@@ -169,7 +170,7 @@ $pdf->Cell(97, 10, '1. Caracterización de la asignatura.', 0, 1, 'L', 0);
 
 $pdf->SetFont('helvetica', '', 12);
 $pdf->SetX($leftMargin);
-$pdf->MultiCell(245, 7, $caracterizacion, 1, 'J', 0);
+$pdf->MultiCell(245, 7, $caracterizacion, 1, 'L', 0);
 
 //Intención didáctica.
 $pdf->SetX(25);
@@ -178,7 +179,7 @@ $pdf->Cell(97, 10, '2. Intención didáctica.', 0, 1, 'L', 0);
 
 $pdf->SetFont('helvetica', '', 12);
 $pdf->SetX(25);
-$pdf->MultiCell(245, 7, $intencionDidactica, 1, 'J', 0);
+$pdf->MultiCell(245, 7, $intencionDidactica, 1, 'L', 0);
 
 //Competencias de la asignatura.
 //Competencias previas.
@@ -190,7 +191,7 @@ $pdf->Cell(97, 10, '3.1 Competencias previas.', 0, 1, 'L', 0);
 
 $pdf->SetFont('helvetica', '', 12);
 $pdf->SetX(25);
-$pdf->MultiCell(245, 7, $competenciasPrevias, 1, 'J', 0);
+$pdf->MultiCell(245, 7, $competenciasPrevias, 1, 'L', 0);
 
 //Competencias genericas.
 $pdf->SetFont('helvetica', 'B', $tamanioFuente);
@@ -199,7 +200,7 @@ $pdf->Cell(97, 10, '3.2 Competencias genéricas.', 0, 1, 'L', 0);
 
 $pdf->SetFont('helvetica', '', 12);
 $pdf->SetX(25);
-$pdf->MultiCell(245, 7, $competenciasGenericas, 1, 'J', 0);
+$pdf->MultiCell(245, 7, $competenciasGenericas, 1, 'L', 0);
 
 //Competencias especificas.
 $pdf->SetFont('helvetica', 'B', $tamanioFuente);
@@ -208,7 +209,7 @@ $pdf->Cell(97, 10, '3.3 Competencias específicas de la asignatura.', 0, 1, 'L',
 
 $pdf->SetFont('helvetica', '', 12);
 $pdf->SetX(25);
-$pdf->MultiCell(245, 7, $competenciasEspecificas, 1, 'J', 0);
+$pdf->MultiCell(245, 7, $competenciasEspecificas, 1, 'L', 0);
 
 
 

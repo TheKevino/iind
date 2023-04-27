@@ -12,7 +12,7 @@
         if(!$result){
             die("Query failed");
         }
-        header("Location: ../../redirection.php?op=index");
+        header("Location: ../../redirection.php");
 
 
 ?>

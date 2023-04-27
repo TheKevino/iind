@@ -1,7 +1,7 @@
   <h2>Reporte final del curso</h2>
   <?php if($user->getTipo() == 1){ ?>
 
-    <form class="buttons-header cabecera-flotante" action="redirection.php?op=18" method="POST">
+    <form class="buttons-header cabecera-flotante" action="redirection.php?op=18" method="POST" target="_blank">
       <button class="boton btn-formulario" id="btnFormulario">
         <i class="fa fa-plus"></i>
         &nbsp;&nbsp;

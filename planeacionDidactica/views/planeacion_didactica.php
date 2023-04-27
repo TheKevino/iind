@@ -60,9 +60,6 @@
 
 </style>
 
-    <!-- Navbar -->
-  <?php include('user_navigator.php'); ?>
-
   <!-- Formulario -->
     <form class="contenedor" action="planeacionDidactica/controller/crear_planeacion.php?idU=<?=$idUsuario;?>" method="POST">
  

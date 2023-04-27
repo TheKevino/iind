@@ -133,24 +133,29 @@
 
             </div>
 
-            <?php if($rowReporte['estado'] == "pendiente") { ?>
-            <div class="row col-md-12 mt-1">
+                <?php if($rowReporte['estado'] == "pendiente") { ?>
+                <div class="row col-md-12 mt-1">
+                    <div class="col-md-6 mt-2">
+                        <a href='../controller/subir_reporte.php?idR=<?= $idReporte;?>&idU=<?= $idUsuario;?>'>
+                            <button class="btn_subir" onclick='return confirmacionSubir()'>
+                            <i class="fa fa-upload"></i>
+                            Subir
+                            </button>
+                        </a>
+                    </div>
 
-                <div class="col-md-6 mt-2">
-                    <a href='../controller/subir_reporte.php?idR=<?= $idReporte;?>&idU=<?= $idUsuario;?>'>
-                        <button class="btn btn-principal" onclick='return confirmacionSubir()'>
-                        <i class="fa fa-upload"></i>
-                        Subir
-                        </button>
-                    </a>
+                    <div class="col-md-6 mt-2">
+                        <a class='btn_agregar_asignatura' href='agregar_asignatura.php?id=<?=base64_encode($idReporte);?>&idUs=<?=base64_encode($idUsuario);?>' target="_blank">
+                            <i class="fa fa-plus"></i>
+                            Agregar Asignatura
+                        </a>
+                    </div>
                 </div>
-
-            </div>
-            <?php } ?>
+                <?php } ?>
 
         </div><!-- FIN CONTENEDOR -->
 
-        <div class="card card-body col-md-10 mt-2 container" id="containerForm">
+        <div class="card cont-tabla" id="containerForm">
 
             <table class="table table-striped tabla-reporte-final">
                 <thead>
@@ -184,7 +189,7 @@
 
                             <?php if($rowReporte['estado'] == "pendiente") { ?>
                             <td>
-                                <a href='../editForm/editar_asignatura_reporte.php?id=<?= base64_encode($idReporte); ?>&idUs=<?= base64_encode($idUsuario) ?>&idAsign=<?= base64_encode($rowAsign['idAsignPrograma']); ?>' class='btn btn-editar'>
+                                <a target='_blank' href='../editForm/editar_asignatura_reporte.php?id=<?= base64_encode($idReporte); ?>&idUs=<?= base64_encode($idUsuario) ?>&idAsign=<?= base64_encode($rowAsign['idAsignPrograma']); ?>' class='btn btn-editar'>
                                     <i class='fa fa-pen'></i>
                                 </a>
                             </td>

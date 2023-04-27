@@ -20,7 +20,7 @@ $result = mysqli_query($conn, $query);
 
     $query = "UPDATE carreras SET nombre = '$nombreCarrera' WHERE idCarrera=$id";
     $result = mysqli_query($conn, $query);
-    header("Location: ../../redirection.php?op=11");
+    header("Location: edit_carrera.php?id=".$id);
   }
 ?>
 

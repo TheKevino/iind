@@ -52,13 +52,10 @@ $jefeDeptoIngIndustrial = $row['jefeDeptoIngInd'];
                 </div>
             </div>
 
-        </div>
+            <!-- Boton -->
+            <input type="submit" class="button btn m-2" name="btnEditarEncargados" id="btnEditarEncargados" value="Editar">
+               
 
-        <!-- Boton -->
-        <div class="row mt-2">
-            <div class="col-md-8">
-                <input type="submit" class="btn-editar-encargados" name="btnEditarEncargados" id="btnEditarEncargados" value="Editar">
-            </div>
         </div>
 
     </form>

@@ -2,8 +2,6 @@
 
 include("../../includes/db.php");
     
-if(isset($_POST["btnAgregarMateria"])){
-    
     $carrera = $_POST['selectCarrera'];
     $clave = $_POST['claveMateria'];
     $nombre = utf8_encode($_POST['nombreMateria']);
@@ -26,7 +24,5 @@ if(isset($_POST["btnAgregarMateria"])){
         die("Query failed");
     }
 
-    header("Location: ../../redirection.php?op=8");
-}
 
 ?>

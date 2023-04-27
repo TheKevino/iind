@@ -3,6 +3,7 @@
 if(!isset($_SESSION['user'])){
     header('Location: login.php');
   }
+  ob_start();
 
 include_once('includes/user.php');
 include 'includes/db.php';
@@ -87,9 +88,16 @@ include 'includes/db.php';
       ?>
 
       <!-- CLASES -->
-      <div class="window" id="index-clases-actuales" style="visibility: hidden;">
+      <div class="window" id="index-clases-actuales" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/clases_actuales.php');
+            ?>
+      </div>
+
+      <!-- FIRMAS -->
+      <div class="window" id="index-firma" style="visibility: hidden; display: none;">
+            <?php
+            include_once('residencias/views/editar_firmas.php');
             ?>
       </div>
 
@@ -104,71 +112,71 @@ include 'includes/db.php';
       ?>
 
       <!-- GESTION DE USUARIOS -->
-      <div class="window" id="index-encargados" style="visibility: hidden;">
+      <div class="window" id="index-encargados" style="visibility: hidden; display: none;">
             <?php
             include_once('encargados/encargados.php');
             ?>
       </div>
 
-      <div class="window" id="index-registrar-usuarios" style="visibility: hidden;">
+      <div class="window" id="index-registrar-usuarios" style="visibility: hidden; display: none;">
             <?php
             include_once('residencias/Formularios/registrar_usuario.php');
             ?>
       </div>
 
-      <div class="window" id="index-consultar-usuarios" style="visibility: hidden;">
+      <div class="window" id="index-consultar-usuarios" style="visibility: hidden; display: none;">
             <?php
             include_once('residencias/views/consulta_usuarios.php');
             ?>
       </div>
 
       <!-- GESTION DE MATERIAS -->
-      <div class="window" id="index-agregar-materia" style="visibility: hidden;">
+      <div class="window" id="index-agregar-materia" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/materia.php');
             ?>
       </div>
 
-      <div class="window" id="index-consultar-materia" style="visibility: hidden;">
+      <div class="window" id="index-consultar-materia" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/consultaMaterias.php');
             ?>
       </div>
 
       <!-- GESTION DE CARRERAS -->
-      <div class="window" id="index-agregar-carrera" style="visibility: hidden;">
+      <div class="window" id="index-agregar-carrera" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/carreras.php');
             ?>
       </div>
 
-      <div class="window" id="index-consultar-carrera" style="visibility: hidden;">
+      <div class="window" id="index-consultar-carrera" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/consultaCarreras.php');
             ?>
       </div>
 
       <!-- GESTION DE GRUPOS -->
-      <div class="window" id="index-agregar-grupo" style="visibility: hidden;">
+      <div class="window" id="index-agregar-grupo" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/grupo.php');
             ?>
       </div>
 
-      <div class="window" id="index-consultar-grupo" style="visibility: hidden;">
+      <div class="window" id="index-consultar-grupo" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/consultaGrupos.php');
             ?>
       </div>
 
       <!-- GESTION DE CLASES -->
-      <div class="window" id="index-crear-clase" style="visibility: hidden;">
+      <div class="window" id="index-crear-clase" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/usuarioImparte.php');
             ?>
       </div>
 
-      <div class="window" id="index-consultar-clase" style="visibility: hidden;">
+      <div class="window" id="index-consultar-clase" style="visibility: hidden; display: none;">
             <?php
             include_once('gestionAcademica/views/consultaClases.php');
             ?>

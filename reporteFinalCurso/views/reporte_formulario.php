@@ -58,9 +58,6 @@
 
 </style>
 
-    <!-- Navbar -->
-  <?php include('user_navigator.php'); ?>
-
   <!-- Formulario -->
     <form class="contenedor" action="reporteFinalCurso/controller/crear_formulario.php?idU=<?= $idUsuario; ?>" method="POST">
  
@@ -71,7 +68,7 @@
             <div class="row col-md-12">
                 <div class="col-md-6 mt-2">
                     <label for="departamento">Departamento:</label>
-                    <input type="text" class="form-control" placeholder="Departamento" name="departamento" id="departamento">
+                    <input type="text" class="form-control" placeholder="Departamento" name="departamento" id="departamento" value="Ingeniería Industrial">
                 </div>
                 <div class="col-md-6 mt-2">
                     <label for="nombre">Nombre completo del docente:</label>

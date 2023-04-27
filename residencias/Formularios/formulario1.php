@@ -81,8 +81,6 @@ $fecha = "";
   } //fin if
 ?>
 
-  <a class="btnbefore" href="../../redirection.php?op=index">Inicio</a>
-
   <section class="contenedor" style="margin-bottom: 30px;">
     <div class="formulario">
 

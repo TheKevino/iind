@@ -164,7 +164,7 @@
 
 			<li class="nav-item">
 			  <a href="residencias/controller/baja_formulario.php?id='.$aRow["idFormulario"].'" target="_blank">
-			  	<button class="btn btn-borrar nav-link" onclick="return confirmacion()">
+			  	<button class="btn-dropdown nav-link" onclick="return confirmacion()">
 			  		Borrar
 		  		</button>
 			  </a>

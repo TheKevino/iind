@@ -198,7 +198,7 @@
 
 			  <li class="nav-item">
 				<a href="planeacionDidactica/controller/baja_planeacion.php?id='.$idPlaneacion.'">
-					<button class="btn btn-borrar nav-link" onclick="return confirmacion()">
+					<button class="btn-dropdown nav-link" onclick="return confirmacion()">
 						Borrar
 					</button>
 		  		</a>

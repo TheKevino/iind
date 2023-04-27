@@ -33,7 +33,7 @@
 
     $query = "UPDATE grupos SET idCarrera = '$carrera', clave = '$clave', nombre = '$nombre' WHERE idGrupo=$id ";
     $result = mysqli_query($conn, $query);
-    header("Location: ../../redirection.php?op=12");
+    header("Location: edit_grupo.php?id=".$id);
   }
 
 

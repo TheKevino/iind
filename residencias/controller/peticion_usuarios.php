@@ -19,14 +19,16 @@ $result = mysqli_query($conn, $query);
 if($result->num_rows > 0){
     $tabla.='
     <table class="table table-bordered" id="tabla_resultados_consulta_usuarios">
-    <tr>
-        <th>ID</th>
-        <th>Ap. Paterno</th>
-        <th>Ap. Materno</th>
-        <th>Nombre(s)</th>
-        <th>Correo</th>
-        <th>Acciones</th>
-    </tr>';
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ap. Paterno</th>
+            <th>Ap. Materno</th>
+            <th>Nombre(s)</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>';
 
     while($row = mysqli_fetch_array($result)){
         $tabla.='
@@ -37,16 +39,16 @@ if($result->num_rows > 0){
           <td>'.$row['nombres'].'</td>
           <td>'.$row['correo'].'</td>
           <td>
-              <a class="btn btn-editar" href="residencias/views/editar_usuario.php?id='.$row['idUsuario'].'">
+              <a class="btn" target="blank" href="residencias/views/editar_usuario.php?id='.$row['idUsuario'].'">
                 <i class="fas fa-marker"></i>
               </a>
 
               <a href="residencias/controller/baja_usuario.php?id='.$row['idUsuario'].'">
-                <button class="btn btn-borrar" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+                <button class="btn" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
               </a>
 
-              <a href="residencias/controller/recuperar_info.php?id='.$row['idUsuario'].'"">
-                <button class="btn btn-principal"><i class="fa fa-key"></i></button>
+              <a class="btn" href="residencias/controller/recuperar_info.php?id='.$row['idUsuario'].'"">
+                <i class="fa fa-key"></i>
               </a>
 
           </td>

@@ -16,12 +16,14 @@ $result = mysqli_query($conn, $query);
 if($result->num_rows > 0){
     $tabla.='
     <table class="table table-striped table-bordered" id="tabla_resultados">
+    <thead>
     <tr>
         <th>Carrera</th>
         <th>Clave</th>
         <th>Grupo</th>
         <th>Acciones</th>
-    </tr>';
+    </tr>
+    </thead>';
 
     while($row = mysqli_fetch_array($result)){
         $tabla.='
@@ -30,12 +32,12 @@ if($result->num_rows > 0){
           <td>'.$row['clave'].'</td>
           <td>'.$row['nombre'].'</td>
           <td>
-              <a class="btn btn-editar" href="gestionAcademica/editForms/edit_grupo.php?id='.$row['idGrupo'].'">
+              <a class="btn" href="gestionAcademica/editForms/edit_grupo.php?id='.$row['idGrupo'].'" target="_blank">
                 <i class="fas fa-marker"></i>
               </a>
 
               <a href="gestionAcademica/controller/baja_grupo.php?id='.$row['idGrupo'].'">
-                <button class="btn btn-borrar" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+                <button class="btn" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
               </a>
 
           </td>

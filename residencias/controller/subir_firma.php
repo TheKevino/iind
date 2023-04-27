@@ -9,7 +9,7 @@ $archivo = $directorio.$id. basename($_FILES["file"]["name"]);
 $tipoArchivo = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
 $size = getimagesize($_FILES["file"]["tmp_name"]); #Sirve para ver si es una imagen
 
-    if($size!=false){
+    if($size!=false || !empty($size)){
 
         if($tipoArchivo == "jpg" || $tipoArchivo == "jpeg" || $tipoArchivo == "png"){
 
@@ -41,7 +41,7 @@ $size = getimagesize($_FILES["file"]["tmp_name"]); #Sirve para ver si es una ima
                 if(!$result){
                     die("Query failed");
                 } else{
-                    header("Location: ../../redirection.php?op=3");
+                    header("Location: ../../redirection.php");
                 }
 
             } else{

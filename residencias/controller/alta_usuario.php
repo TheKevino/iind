@@ -10,13 +10,11 @@
     $mensaje = "";
     $tipo = "";
     $util = new Utilidades();
-    
-    if(isset($_POST["alta_usuario"])){
         
         $paterno =$_POST['paterno'];
         $materno =$_POST['materno'];
         $nombres =$_POST['nombres'];
-        $correo = $_POST['email'];
+        $email = $_POST['email'];
         $nombresLista = explode(" ", $nombres);
 
         $apPaternoUsuario = $util->eliminar_acentos($paterno);
@@ -57,8 +55,5 @@
             }
         
         }
-
-        header("Location: ../../redirection.php?op=1");
-    }
 
 ?>

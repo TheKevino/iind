@@ -1,37 +1,28 @@
-<?php 
-  if(!isset($_SESSION['user']) || $user->getTipo()!=2){
-    header('Location: ../../login.php');
-  }
-?>
-  <div>
+  <div class="contenedor-main">
 
-    <form action="residencias/controller/alta_usuario.php" method="post" class="formulario">
+    <div class="card card-body col-md-5 mt-4">
       <h2>Registrar usuario</h2>
-      <div class="imgposition">
-        <img class="imgicon-form" src="img/login/iconlogin.png" alt="">
-      </div>
-      <div class="contenedor">
-        <div class="input-contenedor">
-          <i class="fa-solid fa-user icon"></i>
-          <input type="text" name="paterno" placeholder="Apellido paterno" />
+
+        <div class="row col-md-12">
+          <input class="form-control m-2" type="text" name="paterno" id="paterno" placeholder="Apellido paterno" />
         </div>
 
-        <div class="input-contenedor">
-          <i class="fa-solid fa-user icon"></i>
-          <input type="text" name="materno" placeholder="Apellido materno (opcional)" />
+        <div class="row col-md-12">
+          <input class="form-control m-2" type="text" name="materno" id="materno" placeholder="Apellido materno (opcional)" />
         </div>
 
-        <div class="input-contenedor">
-          <i class="fa-solid fa-user icon"></i>
-          <input type="text" name="nombres" placeholder="Nombre(s)" />
+        <div class="row col-md-12">
+          <input class="form-control m-2" type="text" name="nombres" id="nombres" placeholder="Nombre(s)" />
         </div>
 
-        <div class="input-contenedor">
-          <input type="email" class="form-control" name="email" placeholder="Correo Electronico" />
+        <div class="row col-md-12">
+          <input type="email" class="form-control m-2" name="email" id="email" placeholder="Correo Electronico" />
         </div>
 
-        <input type="submit" value="Registrar" name="alta_usuario" class="button">
-      </div>
-    </form>
+        <button id="altausuario" class="button btn" onclick="guardarUsuario()" >Registrar</button>
+
+    </div>
+
+    <script src="residencias/js/registrar_usuario.js"></script>
 
   </div>

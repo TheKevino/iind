@@ -43,7 +43,7 @@
     if(!$result){
         die("Error");
     } else{
-        header("Location: ../Formularios/formulario1.php?id=$id");
+        header("Location: ../Formularios/formulario1.php?id=".base64_encode($id));
     }
 
 ?>

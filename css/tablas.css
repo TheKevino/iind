@@ -12,6 +12,28 @@
     --card-color: white;
 }
 
+.btn_subir{
+    width: 10rem;
+    height: auto;
+    border-radius: 7px;
+    padding: 7px;
+    border: 2px var(--Primario) solid;
+    color: var(--Primario);
+    background-color: transparent;
+}
+
+.btn_agregar_asignatura{
+    width: 10rem;
+    height: auto;
+    border-radius: 7px;
+    padding: 10px 12px 10px 10px;
+    color: white;
+    background-color: var(--Primario);
+    text-decoration: none;
+}
+
+.btn_agregar_asignatura:hover{ color: white; }
+
 .sorting::before{ visibility: hidden !important; }
 
 .article-form{
@@ -37,7 +59,7 @@ td{
     padding: 10px !important;
     align-content: center !important;
     vertical-align: middle !important;
-    color: #424242 !important;
+    color: #000 !important;
     font-size: 16px;
 }
 
@@ -46,8 +68,8 @@ table td:not([align]), table th:not([align]){
 }
 
 th{
-    background-color: transparent !important;
-    color: var(--Primario) !important;
+    background-color: var(--Primario) !important;
+    color: white !important;
     text-align: center !important;
     padding: 25px !important;
     vertical-align: middle !important;
@@ -55,8 +77,21 @@ th{
     font-weight: 600 !important;
 }
 
+th:first-child{
+    border-radius: 5px 0 0 0 !important;
+}
+
+th:last-child{
+    border-radius: 0 5px 0 0 !important;
+}
+
 .is-current{
     background-color: var(--Primario) !important;
+}
+
+.cont-tabla{
+    margin: 15px;
+    width: 90% !important;
 }
 
 .tabla-reporte-final{

@@ -9,7 +9,7 @@
 
     $result = mysqli_query($conn, $query);
 
-    header("Location: ../../redirection.php?op=planeacion");
+    header("Location: ../../redirection.php?");
 
 
 ?>

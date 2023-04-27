@@ -35,7 +35,7 @@ if( isset($_POST['update_usuario']) ){
   $query = "UPDATE usuarios set paterno = '$paterno', materno = '$materno', nombres='$nombres', correo = '$email' WHERE idUsuario = $id ";
   mysqli_query($conn, $query);
 
-  header("Location: ../../redirection.php?op=2");
+  header("Location: editar_usuario.php?id=".$id);
 
 }
 
@@ -70,24 +70,6 @@ if( isset($_POST['update_usuario']) ){
     <link rel="stylesheet" href="../css/login.css">
   </head>
   <body>
-
-<!-- Navbar -->
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../../redirection.php?op=index"><i class="fa fa-home"></i>  Usuario: <?php echo $user->getNombre(); ?></a>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../../redirection.php?op=1">Agregar Usuario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../redirection.php?op=2">Consultar Usuario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../logout.php">Cerrar sesion</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
   <!-- Formulario -->
     <form action="editar_usuario.php?id=<?php echo $_GET['id']; ?>" method="post" class="formulario">

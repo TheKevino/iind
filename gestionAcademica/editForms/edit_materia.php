@@ -57,7 +57,7 @@
     intencionDidactica = '$intencionDidactica', competenciasPrevias = '$competenciasPrevias', competenciasGenericas = '$competenciasGenericas', 
     competenciasEspecificas = '$competenciasEspecificas', fuentes = '$fuentes', apoyosDidacticos = '$apoyosDidacticos' WHERE idMateria=$id ";
     $result = mysqli_query($conn, $query);
-    header("Location: ../../redirection.php?op=13");
+    header("Location: edit_materia.php?id=".$id);
   }
 
 

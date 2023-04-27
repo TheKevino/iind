@@ -1,8 +1,8 @@
   <h2>Planeacion e instrumentación didáctica</h2>
   <?php if($user->getTipo() == 1){ ?>
 
-    <form class="buttons-header cabecera-flotante" action="redirection.php?op=19" method="POST">
-      <button class="boton btn-formulario" id="btnFormulario">
+    <form class="buttons-header cabecera-flotante" action="redirection.php?op=19" target="_blank" method="POST">
+      <button class="boton btn-formulario" id="btnFormulario" >
         <i class="fa fa-plus"></i>
         &nbsp;&nbsp;
         Nueva Planeación

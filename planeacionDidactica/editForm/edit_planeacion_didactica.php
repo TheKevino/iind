@@ -64,7 +64,7 @@
 </style>
 
   <!-- Formulario -->
-    <form class="contenedor" action="../controller/editar_planeacion.php?id=<?=$idPlaneacion;?>" method="POST">
+    <form class="contenedor" action="../controller/editar_planeacion.php?id=<?=$idPlaneacion;?>&&idU=<?=$idUsuario;?>" method="POST">
  
         <div class="card card-body col-md-8 mt-4" id="containerForm">
 

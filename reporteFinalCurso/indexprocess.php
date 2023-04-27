@@ -208,14 +208,14 @@
 									</li>
 									
 									<li class='nav-item'>
-										<a class='nav-link active' href='reporteFinalCurso/views/agregar_asignatura.php?id=".$reporte."&idUs=".$usuario."'>
+										<a class='nav-link active' href='reporteFinalCurso/views/agregar_asignatura.php?id=".$reporte."&idUs=".$usuario."' target='_blank'>
 											Agregar Asignatura
 										</a>
 									</li>
 									
 									<li class='nav-item'>
 										<a class='nav-link active' href='reporteFinalCurso/controller/baja_reporte.php?id=".$aRow['idReporte']."'>
-											<button class='btn btn-borrar' onclick='return confirmacion()'>
+											<button class='btn-dropdown' onclick='return confirmacion()'>
 												Borrar
 											</button>
 										</a>

@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-12 justify-content-center">
                         <input type="text" class="form-control" id="buscador_grupo_consulta" name="buscador_grupo_consulta" autocomplete="off" placeholder="Informacion del grupo">
-                        <button class="btn btn-secundario mt-4" name="btnBuscarGrupoConsulta" id="btnBuscarGrupoConsulta">Buscar</button>
+                        <button class="boton btn-consulta mt-4" name="btnBuscarGrupoConsulta" id="btnBuscarGrupoConsulta">Buscar</button>
                     </div>
                 </div>
             </div>

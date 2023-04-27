@@ -143,7 +143,7 @@
     $pdf->SetY(228);
     */
     if($asesorInterno->getFirma()!="img/image.jpg") {
-        $pdf->Cell(60, 30, $pdf->Image('../'.$asesorInterno->getFirma(), 15, 225, 50, 25), 1, 0, 'C');
+        $pdf->Cell(60, 30, $pdf->Image('../'.$asesorInterno->getFirma(), 15, 230, 50, 25), 1, 0, 'C');
     } else{
         $pdf->Cell(60, 30, "", 1, 0, 'L', 0);
     }

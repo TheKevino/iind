@@ -50,9 +50,6 @@
 
 </style>
 
-    <!-- Navbar -->
-  <?php include('navigator.php'); ?>
-
   <!-- Formulario -->
     <div class="contenedor">
         <div class="pagination">

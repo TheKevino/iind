@@ -22,7 +22,7 @@
             unlink("../".$row['firmaQR']);
         }
 
-        header("Location: ../../redirection.php?op=2");
+        header("Location: ../../redirection.php");
 
 
 ?>
