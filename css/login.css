@@ -12,19 +12,23 @@
 }
 
 body::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: transparent;        /* color of the tracking area */
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-  }
+    width: 12px;
+    /* width of the entire scrollbar */
+}
 
-.main{
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+}
+
+.main {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -32,16 +36,20 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-.info-container{
+.img-cabecera {
+    display: none
+}
+
+.info-container {
     width: 55%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: rgb(17,16,29);
-    background: linear-gradient(90deg, rgba(17,16,29,1) 0%, rgba(48,36,71,1) 95%);
+    background: rgb(17, 16, 29);
+    background: linear-gradient(90deg, rgba(17, 16, 29, 1) 0%, rgba(48, 36, 71, 1) 95%);
 }
 
-.login-container{
+.login-container {
     width: 45%;
     height: 100%;
     display: flex;
@@ -49,7 +57,7 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-.banner{
+.banner {
     height: 40%;
     width: 100%;
     padding: 20px;
@@ -78,16 +86,19 @@ body::-webkit-scrollbar {
         background-size: cover;
         background-position: center center;
     }
+
     50% {
         background-image: url("../assets/Images/Office\ management-rafiki.png");
         background-size: cover;
         background-position: center center;
     }
+
     75% {
         background-image: url("../assets/Images/Task-bro.png");
         background-size: cover;
         background-position: center center;
     }
+
     100% {
         background-image: url("../assets/Images/Office\ management-amico.png");
         background-size: cover;
@@ -97,40 +108,41 @@ body::-webkit-scrollbar {
 
 /* FIN SLIDER */
 
-.tec-logo{
+.tec-logo {
     width: 100%;
     height: 100%;
     align-items: baseline;
     padding: 5px;
 }
 
-.images{
+.images {
     text-align: center;
 }
 
-.tec-logo img{
+.tec-logo img {
     width: var(--img-banner-size);
     height: var(--img-banner-size);
 }
 
-.text-tec p{
+.text-tec p {
     text-align: center;
     color: white;
     font-size: 2rem;
     font-weight: 300;
 }
 
-.contenedor{
+.contenedor {
     width: 70%;
     height: 60%;
 }
 
-.cabecera, .cuerpo{
+.cabecera,
+.cuerpo {
     width: 100%;
     height: 40%;
 }
 
-.boton{
+.boton {
     width: 100%;
     height: 15%;
     display: flex;
@@ -139,7 +151,7 @@ body::-webkit-scrollbar {
 
 }
 
-.button{
+.button {
     width: 100%;
     height: 80%;
     border: none;
@@ -150,25 +162,25 @@ body::-webkit-scrollbar {
     border-radius: 5px;
 }
 
-.text-login{
+.text-login {
     color: var(--Primario);
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-.text-secundario{
+.text-secundario {
     color: var(--Text-Op);
     font-size: 1.4rem;
     font-weight: 400;
 }
 
-.block-div{
+.block-div {
     width: 100%;
     height: 50%;
     align-items: center;
 }
 
-.block-div input{
+.block-div input {
     width: 100%;
     height: 3rem;
     border: none;
@@ -186,9 +198,9 @@ body::-webkit-scrollbar {
 .input-wrapper {
     position: relative;
     width: auto;
- }
+}
 
- .input-icon {
+.input-icon {
     color: var(--Text-Op);
     position: absolute;
     width: 35px;
@@ -196,14 +208,66 @@ body::-webkit-scrollbar {
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
- }
+}
 
- .input-wrapper i{
+.input-wrapper i {
     font-size: 1.3rem;
     margin-top: 10px;
- }
+}
 
- footer{
-    background-color: rgba(48,36,71,1);
+footer {
+    background-color: rgba(48, 36, 71, 1);
     color: white;
- }
+}
+
+/* Ajusta las dimensiones del slider en diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+    .slider {
+        display: none;
+    }
+    .images {
+        margin-bottom: 1rem;
+    }
+    .info-container {
+        display: none;
+    }
+    .login-container {
+        width: 100%;
+    }
+    .main {
+        display: block;
+    }
+    .img-cabecera {
+        display: flex;
+        width: 100%;
+        background-color: rgb(17, 16, 29);
+        align-items: center;
+    }
+}
+
+/* Ajusta las dimensiones del slider en pantallas más pequeñas */
+@media screen and (max-width: 480px) {
+    .slider {
+        display: none;
+    }
+    .images {
+        margin-bottom: 1rem;
+    }
+    .info-container{
+        display: none;
+    }
+    .login-container {
+        width: 100%;
+    }
+    .main {
+        display: block;
+    }
+    .img-cabecera {
+        width: var(--img-banner-size);
+        height: var(--img-banner-size);
+        display: flex;
+        width: 100%;
+        background-color: rgb(17, 16, 29);
+        align-items: center;
+    }
+}
