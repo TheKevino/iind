@@ -10,7 +10,7 @@
 ?>
 <div class="contenedor-main">
 
-  <form class="card card-body col-md-5 mt-4" action="gestionAcademica/controller/agregarGrupo.php" method="POST">
+  <div class="card card-body col-md-5 mt-4">
     <h3>Grupo</h3>
 
     <div class="row col-md-12 m-2">
@@ -38,8 +38,8 @@
       </div>
     </div>
 
-    <input type="submit" value="Agregar" class="button btn" name="btnAgregarGrupo" id="btnAgregarGrupo">
+    <button onclick="agregarGrupo()" class="button btn" name="btnAgregarGrupo" id="btnAgregarGrupo">Agregar</button>
 
-  </form>
+  </div>
   <script src="gestionAcademica/js/grupos.js"></script>
 </div>

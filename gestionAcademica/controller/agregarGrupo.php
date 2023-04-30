@@ -2,8 +2,6 @@
 
 include("../../includes/db.php");
     
-if(isset($_POST["btnAgregarGrupo"])){
-    
     $carrera =$_POST['selectCarrera'];
     $clave =$_POST['clave'];
     $nombre =$_POST['nombre'];
@@ -17,6 +15,5 @@ if(isset($_POST["btnAgregarGrupo"])){
     }
 
     header("Location: ../../redirection.php?op=9");
-}
 
 ?>

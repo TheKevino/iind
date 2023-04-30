@@ -1,6 +1,6 @@
 <div class="contenedor-main">
    
-    <form class="card card-body col-md-5 mt-4" action="gestionAcademica/controller/agregarCarrera.php" method="POST">
+  <div class="card card-body col-md-5 mt-4">
         <h3>Carreras</h3>
   
           <div class="row col-md-12 m-1">
@@ -9,9 +9,9 @@
             </div>
           </div>
 
-          <input type="submit" value="Agregar" class="button btn m-2" name="btnAgregarCarrera" id="btnAgregarCarrera">
+          <button onclick="agregarCarrera()" class="button btn m-2" name="btnAgregarCarrera" id="btnAgregarCarrera">Agregar</button>
           
-    </form>
+  </div>
 
     <script src="gestionAcademica/js/carreras.js"></script>
 </div>

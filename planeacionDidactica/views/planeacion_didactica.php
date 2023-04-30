@@ -58,6 +58,11 @@
         flex-direction: column;
     }
 
+    .btn-alta{
+        background-color: #1d1b31;
+        color: white;
+    }
+
 </style>
 
   <!-- Formulario -->
@@ -133,7 +138,7 @@
 
             <div class="row mt-4">
                 <div class="col-md-8">
-                    <button class="btn btn-warning" id="btnGuardar">Guardar</button>
+                    <button class="btn btn-alta" id="btnGuardar">Guardar</button>
                 </div>
             </div>
 

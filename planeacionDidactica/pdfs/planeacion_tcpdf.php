@@ -504,6 +504,10 @@ $pdf->Line(35, 160, 130, 160);
 $pdf->SetXY(50, 155);
 $pdf->Cell(97, 20, "Nombre y firma del (de la) docente.", 0, 1, 'L', 0);
 
+$pdf->SetFont('helvetica', 'B', 11);
+$pdf->SetXY(35, 153);
+$pdf->MultiCell(90, 5, $nombreDocente, 0, 'C', 0);
+/*
 if($rowFirma["firma"] != null){
     $rutaFirma = "../../residencias/".$rowFirma["firma"];
     $pdf->Image($rutaFirma, 60, 138, 40, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
@@ -512,7 +516,7 @@ if($rowFirma["firma"] != null){
     $pdf->SetXY(35, 153);
     $pdf->MultiCell(90, 5, $nombreDocente, 0, 'C', 0);
 }
-
+*/
 $pdf->SetFont('helvetica', '', 12);
 
 //Firma jefe de depto
