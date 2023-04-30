@@ -5,7 +5,7 @@
 }
 
 :root {
-  --Primario: #143F6B;
+  --Primario: #1d1b31;
   --Secundario: #FEB139;
   --Complementario-A: #F55353;
   --Complementario-B: #F6F54D;
@@ -16,7 +16,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -35,7 +35,8 @@ a{
   border-radius: 10px;
   border: 2px solid rgb(0, 0, 0);
 }
-input[type="text"]{
+
+input[type="text"] {
   font-size: 20px;
   padding: 5px;
   border: none;
@@ -43,23 +44,26 @@ input[type="text"]{
 }
 
 .icon {
-    padding: 5px;
+  padding: 5px;
   min-width: auto;
 }
+
 /* Contenedor formulario */
-.ADDform{
+.ADDform {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.btn{
+
+.btn {
   background: var(--Secundario);
   border: none;
 }
 
-.btnform{
+.btnform {
   width: 500px;
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -69,6 +73,7 @@ input[type="text"]{
   justify-content: center;
   gap: 20px;
 }
+
 .card-content {
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
@@ -84,11 +89,13 @@ input[type="text"]{
   position: relative;
   overflow: hidden;
 }
+
 .card .info {
   display: grid;
   height: 100%;
   grid-template-rows: 1fr auto;
 }
+
 .banner {
   border-radius: 10px;
   text-align: center;
@@ -98,12 +105,12 @@ input[type="text"]{
   grid-template-rows: 1fr auto;
 }
 
-.botones-cards{
+.botones-cards {
   position: absolute;
   bottom: 10px;
 }
 
-.paginas{
+.paginas {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,17 +118,18 @@ input[type="text"]{
   margin: 0;
 }
 
-.paginas ul{
+.paginas ul {
   margin: 10px 0;
   padding: 0;
 }
-.paginas li{
+
+.paginas li {
   display: inline-block;
   margin: 0;
   padding: 10px;
 }
 
-.paginas li a{
+.paginas li a {
   background: rgb(228, 228, 228);
   border-radius: 3px;
   color: rgb(50, 50, 50);
@@ -129,7 +137,11 @@ input[type="text"]{
   text-decoration: none;
 }
 
-.actual{
+.actual {
   background: var(--Primario) !important;
   color: rgb(255, 255, 255) !important;
+}
+
+.btn-background {
+  background-color: #1d1b31;
 }
