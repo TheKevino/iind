@@ -7,24 +7,24 @@ let containerGuardar = document.getElementById('containerGuardar');
 let containerTable = document.getElementById('containerTable');
 
 //----------OBJETOS A UTILIZAR --------------------------
-var docente ={
+var docente = {
     id: null,
     nombre: null
 }
 
-var materia ={
+var materia = {
     id: null,
     nombre: null
 }
 
-var grupo ={
+var grupo = {
     id: null,
     nombre: null,
     clave: null
 }
 
 //---------- CAMBIO DE PAGINAS --------------------------
-function paginaDocentes(){
+function paginaDocentes() {
     containerDocentes.style.display = 'block';
     containerMaterias.style.display = 'none';
     containerGrupos.style.display = 'none';
@@ -33,7 +33,7 @@ function paginaDocentes(){
     containerTable.style.display = 'block';
 }
 
-function paginaMaterias(){
+function paginaMaterias() {
     containerDocentes.style.display = 'none';
     containerMaterias.style.display = 'block';
     containerGrupos.style.display = 'none';
@@ -42,7 +42,7 @@ function paginaMaterias(){
     containerTable.style.display = 'block';
 }
 
-function paginaGrupos(){
+function paginaGrupos() {
     containerDocentes.style.display = 'none';
     containerMaterias.style.display = 'none';
     containerGrupos.style.display = 'block';
@@ -51,7 +51,7 @@ function paginaGrupos(){
     containerTable.style.display = 'block';
 }
 
-function paginaFechas(){
+function paginaFechas() {
     containerDocentes.style.display = 'none';
     containerMaterias.style.display = 'none';
     containerGrupos.style.display = 'none';
@@ -60,7 +60,7 @@ function paginaFechas(){
     containerTable.style.display = 'block';
 }
 
-function paginaExcel(){
+function paginaExcel() {
     containerDocentes.style.display = 'none';
     containerMaterias.style.display = 'none';
     containerGrupos.style.display = 'none';
@@ -71,87 +71,87 @@ function paginaExcel(){
 
 //---------PARA LA TABLA DE USUARIOS/DOCENTES-----------------
 //metodos para que la tabla se recargue en tiempo real
-function obtener_registros_usuarios(usuarios){
+function obtener_registros_usuarios(usuarios) {
     $.ajax({
         url: 'gestionAcademica/controller/peticion_docentes.php',
         type: 'POST',
         dataType: 'html',
         data: { usuarios: usuarios }
     })
-    .done(function(resultado){
-        $("#tabla_usuarios_clases").html(resultado);
-    });
+        .done(function (resultado) {
+            $("#tabla_usuarios_clases").html(resultado);
+        });
 }
 
-$(document).on('click', '#btnBuscarUsuarioClase', function(){
+$(document).on('click', '#btnBuscarUsuarioClase', function () {
     var valorBusqueda = $(document.getElementById('buscador_usuario_clase')).val();
-    if(valorBusqueda != ""){
+    if (valorBusqueda != "") {
         obtener_registros_usuarios(valorBusqueda);
-    } else{
+    } else {
         obtener_registros_usuarios();
     }
 });
 
 //---------PARA LA TABLA DE ASIGNATURAS-----------------
 
-function obtener_registros_materia(materias){
+function obtener_registros_materia(materias) {
     $.ajax({
         url: 'gestionAcademica/controller/peticion_asignaturas.php',
         type: 'POST',
         dataType: 'html',
         data: { materias: materias }
     })
-    .done(function(resultado){
-        $("#tabla_materia").html(resultado);
-    });
+        .done(function (resultado) {
+            $("#tabla_materia").html(resultado);
+        });
 }
 
-$(document).on('click', '#btnBuscarMateria', function(){
+$(document).on('click', '#btnBuscarMateria', function () {
     var valorBusqueda = $(document.getElementById('buscador_materia')).val();
-    if(valorBusqueda != ""){
+    if (valorBusqueda != "") {
         obtener_registros_materia(valorBusqueda);
-    } else{
+    } else {
         obtener_registros_materia();
     }
 });
 
 //---------PARA LA TABLA DE ASIGNATURAS-----------------
 
-function obtener_registros_grupo(grupos){
+function obtener_registros_grupo(grupos) {
     $.ajax({
         url: 'gestionAcademica/controller/peticion_gruposAsignar.php',
         type: 'POST',
         dataType: 'html',
         data: { grupos: grupos }
     })
-    .done(function(resultado){
-        $("#tabla_grupos").html(resultado);
-    });
+        .done(function (resultado) {
+            $("#tabla_grupos").html(resultado);
+        });
 }
 
-$(document).on('click', '#btnBuscarGrupo', function(){
+$(document).on('click', '#btnBuscarGrupo', function () {
     var valorBusqueda = $(document.getElementById('buscador_grupo')).val();
-    if(valorBusqueda != ""){
+    if (valorBusqueda != "") {
         obtener_registros_grupo(valorBusqueda);
-    } else{
+    } else {
         obtener_registros_grupo();
     }
 });
 
 //-----------ASIGNAR ELEMENTOS ------------
-function asignarDocente(id, nombre){
+function asignarDocente(id, nombre) {
     docente['id'] = id;
     docente['nombre'] = nombre;
     document.getElementById('docente').value = docente['nombre'];
 }
 
-function asignarMateria(id, nombre){
+function asignarMateria(id, nombre) {
     materia['id'] = id;
     materia['nombre'] = nombre;
     document.getElementById('asignatura').value = materia['nombre'];
 }
 
-function asignarGrupo(id, nombre, clave){
+function asignarGrupo(id, nombre, clave) {
     grupo['id'] = id;
     grupo['nombre'] = nombre;
     grupo['clave'] = clave;
@@ -159,38 +159,55 @@ function asignarGrupo(id, nombre, clave){
 }
 
 //------------GUARDAR FORMULARIO-------------
-function guardarClase(){
+function guardarClase() {
     let fecha_inicio = document.getElementById('fecha_inicio').value;
     let fecha_fin = document.getElementById('fecha_fin').value;
 
-    if( docente['id'] == null || materia['id'] == null || grupo['id'] == null || grupo['id'] == null ){
-        alert("Faltan datos por seleccionar");
-    } else if ( fecha_inicio == null || fecha_fin == null ){
-        alert("Falta seleccionar las fechas");
-    } else if( fecha_inicio >= fecha_fin ){
-        alert("Fechas invalidas");
+    if (docente['id'] == null || materia['id'] == null || grupo['id'] == null || grupo['id'] == null) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Faltan datos por seleccionar.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+    } else if (fecha_inicio == null || fecha_fin == null) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Falta seleccionar las fechas.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+    } else if (fecha_inicio >= fecha_fin) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Fechas invalidas.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
     } else {
         //para mandar la informacion a php
-        $.post('gestionAcademica/controller/alta_clase.php', { docente: docente['id'], asignatura: materia['id'], grupo: grupo['id'],
-            fecha_inicio: fecha_inicio, fecha_final: fecha_fin }, function(data){
+        $.post('gestionAcademica/controller/alta_clase.php', {
+            docente: docente['id'], asignatura: materia['id'], grupo: grupo['id'],
+            fecha_inicio: fecha_inicio, fecha_final: fecha_fin
+        }, function (data) {
 
-                if(data!=null){
-                    alert("Clase guardada");
-                    asignarDocente(null, null);
-                    asignarMateria(null, null);
-                    asignarGrupo(null, null, null);
+            if (data != null) {
+                alert("Clase guardada");
+                asignarDocente(null, null);
+                asignarMateria(null, null);
+                asignarGrupo(null, null, null);
 
-                    document.getElementById("buscador_usuario_clase").value = "";
-                    document.getElementById("buscador_materia").value = "";
-                    document.getElementById("buscador_grupo").value = "";
+                document.getElementById("buscador_usuario_clase").value = "";
+                document.getElementById("buscador_materia").value = "";
+                document.getElementById("buscador_grupo").value = "";
 
-                    document.getElementById("docente").value = "Sin asignar";
-                    document.getElementById("asignatura").value = "Sin asignar";
-                    document.getElementById("grupo").value = "Sin asignar";
+                document.getElementById("docente").value = "Sin asignar";
+                document.getElementById("asignatura").value = "Sin asignar";
+                document.getElementById("grupo").value = "Sin asignar";
 
-                } else{
-                    alert("Error guardando la clase");
-                }
+            } else {
+                alert("Error guardando la clase");
+            }
 
         });
     }

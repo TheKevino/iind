@@ -53,6 +53,13 @@ if (isset($_POST['btnAgregarGrupo'])) {
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/Styleform.css">
 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!-- Validaciones -->
+  <script src="../../js/validaciones.js"></script>
+
   <!-- Extend Icon -->
   <script src="https://kit.fontawesome.com/8eed7147bf.js" crossorigin="anonymous"></script>
 
@@ -84,7 +91,29 @@ if (isset($_POST['btnAgregarGrupo'])) {
     }
   </style>
 
-  <form class="formulario" action="edit_grupo.php?idG=<?= $id; ?>" method="POST">
+  <script>
+    function validarFormulario() {
+      var formulario = document.getElementById("formulario");
+      var carrera = formulario.selectCarrera.value;
+      var clave = formulario.clave.value;
+      var nombre = formulario.nombre.value;
+
+      if (carrera === "" || clave === "" || nombre === "") {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Faltan campos por llenar.',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+  <form class="formulario" id="formulario" action="edit_grupo.php?idG=<?= $id; ?>" method="POST"
+    onsubmit="return validarFormulario()">
     <div class="card card-body">
       <h1>Grupo</h1>
       <div class="contenedor">
@@ -104,14 +133,16 @@ if (isset($_POST['btnAgregarGrupo'])) {
       </div>
       <div class="contenedor">
         <label for="clave">Clave del grupo:</label>
-        <input class="form-control" type="text" placeholder="Clave del grupo" name="clave" id="clave" value="<?= $row2['clave'] ?>" />
+        <input class="form-control" type="text" placeholder="Clave del grupo" name="clave" id="clave"
+          value="<?= $row2['clave'] ?>" />
       </div>
       <div class="contenedor">
         <label for="nombre">Nombre del grupo:</label>
-        <input class="form-control" type="text" placeholder="Nombre del grupo" name="nombre" id="nombre" value="<?= $row2['nombre'] ?>" />
+        <input class="form-control" type="text" placeholder="Nombre del grupo" name="nombre" id="nombre"
+          value="<?= $row2['nombre'] ?>" />
       </div>
       <div class="contenedor">
-      <input type="submit" value="Editar" class="button btn" name="btnAgregarGrupo" id="btnAgregarGrupo">
+        <input type="submit" value="Editar" class="button btn" name="btnAgregarGrupo" id="btnAgregarGrupo">
       </div>
     </div>
   </form>

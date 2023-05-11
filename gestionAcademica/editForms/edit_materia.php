@@ -80,6 +80,13 @@ if (isset($_POST['btnAgregarMateria'])) {
   <!-- Extend Icon -->
   <script src="https://kit.fontawesome.com/8eed7147bf.js" crossorigin="anonymous"></script>
 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!-- Validaciones -->
+  <script src="../../js/validaciones.js"></script>
+
 </head>
 
 <body>
@@ -108,7 +115,30 @@ if (isset($_POST['btnAgregarMateria'])) {
     }
   </style>
 
-  <form class="formulario" action="edit_materia.php?idM=<?= $id; ?>" method="POST">
+  <script>
+    function validarFormulario() {
+      var formulario = document.getElementById("formulario");
+      var carrera = formulario.selectCarrera.value;
+      var clave = formulario.claveMateria.value;
+      var nombre = formulario.nombreMateria.value;
+      var satca = formulario.satca.value;
+
+      if (carrera === "" || clave === "" || nombre === "" || satca === "") {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Faltan campos por llenar.',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+  <form class="formulario" id="formulario" action="edit_materia.php?idM=<?= $id; ?>" method="POST"
+    onsubmit="return validarFormulario()">
 
     <div class="card card-body">
       <h1>Materias</h1>
@@ -134,12 +164,12 @@ if (isset($_POST['btnAgregarMateria'])) {
       <div class="contenedor">
         <label for="nombreMateria">Nombre de la asignatura:</label>
         <input class="form-control" type="text" placeholder="Nombre de la asignatura" name="nombreMateria"
-          id="nombreMateria" value="<?= utf8_decode($row2['nombre']); ?>" />
+          id="nombreMateria" oninput="validarSoloLetras(this.id)" value="<?= utf8_decode($row2['nombre']); ?>" />
       </div>
       <div class="contenedor">
         <label for="satca">Satca:</label>
         <input class="form-control" type="text" name="satca" id="satca" placeholder="SATCA. Ej: 2-3-5"
-          value="<?= $row2['satca'] ?>" />
+          oninput="validarNumerosYGuiones(this.id)" value="<?= $row2['satca'] ?>" />
       </div>
       <div class="contenedor">
         <label for="caracterizacion">Caracterización de la asignatura:</label>

@@ -1,7 +1,13 @@
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- Validaciones -->
+<script src="../../js/validaciones.js"></script>
+
 <div>
     <style>
-
-        .contenedor-crear-clase{
+        .contenedor-crear-clase {
             height: auto;
             display: flex;
             justify-content: center;
@@ -9,13 +15,13 @@
             flex-direction: column;
         }
 
-        .pagination{
+        .pagination {
             text-align: center;
             margin: 30px 30px 60px;
             user-select: none;
         }
 
-        .btn-page{
+        .btn-page {
             border: none;
             background-color: transparent;
             color: #1d1b31;
@@ -23,10 +29,9 @@
             margin: 5px;
             padding: 5px 10px;
         }
-
     </style>
     <h3>Crear clase</h3>
-  <!-- Formulario -->
+    <!-- Formulario -->
     <div class="contenedor-crear-clase">
         <div class="pagination">
             <button onclick="paginaDocentes()" class="btn-page">Docente</button>
@@ -66,7 +71,8 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_usuario_clase" id="buscador_usuario_clase" placeholder="Apellidos, nombre, usuario, etc">
+                    <input type="text" class="form-control" name="buscador_usuario_clase" id="buscador_usuario_clase"
+                        placeholder="Apellidos, nombre, usuario, etc">
                 </div>
 
                 <div class="col-md-2">
@@ -76,7 +82,7 @@
             </div>
 
             <div class="row col-md-12 mt-2">
-                
+
                 <div class="col-md-12">
                     <section id="tabla_usuarios_clases">
 
@@ -93,7 +99,8 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_materia" id="buscador_materia" placeholder="Informacion de la asignatura">
+                    <input type="text" class="form-control" name="buscador_materia" id="buscador_materia"
+                        placeholder="Informacion de la asignatura">
                 </div>
 
                 <div class="col-md-2">
@@ -103,7 +110,7 @@
             </div>
 
             <div class="row col-md-12 mt-2">
-                
+
                 <div class="col-md-12">
                     <section id="tabla_materia">
 
@@ -120,7 +127,8 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_grupo" id="buscador_grupo" placeholder="Informacion del grupo">
+                    <input type="text" class="form-control" name="buscador_grupo" id="buscador_grupo"
+                        placeholder="Informacion del grupo">
                 </div>
 
                 <div class="col-md-2">
@@ -130,7 +138,7 @@
             </div>
 
             <div class="row col-md-12 mt-2">
-                
+
                 <div class="col-md-12">
                     <section id="tabla_grupos">
 
