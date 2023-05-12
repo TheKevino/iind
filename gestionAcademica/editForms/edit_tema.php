@@ -39,7 +39,7 @@
 
         $result = mysqli_query($conn, $query);
 
-        header("Location: ../views/temas.php?id=$idMateria");
+        header("Location: edit_tema.php?id=$idTema&idm=$idMateria");
     }
 
 ?>

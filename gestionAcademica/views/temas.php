@@ -49,7 +49,7 @@ $result = mysqli_query($conn, $query);
 <div class="container mt-2">
 
     <h3>Temas</h3>
-    <a class="btn btn-principal m-1" href="agregar_tema.php?id=<?= $idMateria; ?>" target="_blank">
+    <a class="btn btn-main m-1" href="agregar_tema.php?id=<?= $idMateria; ?>" target="_blank">
         Nuevo Tema
     </a>
 
@@ -64,14 +64,14 @@ $result = mysqli_query($conn, $query);
                 <span class="tema-info">Tema No. </span> <?= $row["noTema"]?>. &nbsp;&nbsp; 
                 <span class="tema-info">Nombre: </span> <?= utf8_decode($row["nombre"]);?> &nbsp;&nbsp; 
 
-                <a class='btn btn-secundario' href='../editForms/edit_tema.php?id=<?= $row['idTema']; ?>&idm=<?= $idMateria; ?>' target="_blank">
+                <a class='btn btn-main' href='../editForms/edit_tema.php?id=<?= $row['idTema']; ?>&idm=<?= $idMateria; ?>' target="_blank">
 					<i class='fa fa-pen'></i>
 				</a>
 
                 &nbsp;&nbsp; 
 
                 <a href='../controller/baja_tema.php?id=<?= $row['idTema']; ?>&idm=<?= $idMateria; ?>'>
-					<button class='btn btn-borrar' onclick='return confirmacion()'>
+					<button class='btn btn-main' onclick='return confirmacion()'>
 						<i class='fa fa-trash'></i>
 					</button>
 				</a>

@@ -14,7 +14,7 @@
         $paterno =$_POST['paterno'];
         $materno =$_POST['materno'];
         $nombres =$_POST['nombres'];
-        $email = $_POST['email'];
+        $correo = $_POST['email'];
         $nombresLista = explode(" ", $nombres);
 
         $apPaternoUsuario = $util->eliminar_acentos($paterno);

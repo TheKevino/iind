@@ -154,6 +154,10 @@ while( $rowAsign = mysqli_fetch_array($resultAsignaturas) ){
     $pdf->Cell(70, 10, "Nombre y firma del (de la) docente.", 0, 1, 'L', 0);
 
     //firma del docente
+    $pdf->SetFont('helvetica', 'B', 10);
+    $pdf->SetXY(15, 253);
+    $pdf->MultiCell(80, 5, utf8_decode(mb_strtoupper($rowReporte["nombreDocente"])), 0, 'C', 0);
+    /*
     if($rowFirma["firma"] != null){
         $rutaFirma = "../../residencias/".$rowFirma["firma"];
         $pdf->Image($rutaFirma, 25, 240, 40, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
@@ -162,7 +166,7 @@ while( $rowAsign = mysqli_fetch_array($resultAsignaturas) ){
         $pdf->SetXY(15, 253);
         $pdf->MultiCell(80, 5, utf8_decode(mb_strtoupper($rowReporte["nombreDocente"])), 0, 'C', 0);
     }
-
+    */
     $pdf->SetFont('helvetica', '', 11);
 
     //Firma del jefe de depto

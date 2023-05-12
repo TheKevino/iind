@@ -35,7 +35,7 @@ input[type="text"],
 input[type="number"],
 input[type="date"] {
   font-size: 20px;
-  width: 85%;
+  width: 100%;
   padding: 10px;
   border: none;
 }
@@ -74,19 +74,9 @@ select {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #FCBF49;
+  background-color: #1d1b31;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-.button:hover {
-  background-color: #F77F00
-}
-
-.button:active {
-  background-color: #FCBF49;
-  transform: translateY(4px);
+  border-radius: 7px;
 }
 
 p {

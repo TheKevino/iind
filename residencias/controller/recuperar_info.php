@@ -42,6 +42,6 @@ if($row["correo"] != null){
 
 }
 
-header("Location: ../../redirection.php?op=2");
+header("Location: ../../redirection.php");
 
 ?>

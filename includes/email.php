@@ -12,7 +12,7 @@ class Email{
     public function __construct(){
         $this->Host = "smtp.hostinger.com";
         $this->SMTPAuth = true;
-        $this->Username = "deptoindustrial@iind.online";
+        $this->Username = "industrial@iind.online";
         $this->Password = "Bonelessbbq1ndustrial$";
         $this->SMTPSecure = "STARTTLS";
         $this->Port = 587;

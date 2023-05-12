@@ -103,9 +103,10 @@ if (isset($_SESSION['user'])) {
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <h6 class="text-uppercase fw-bold mb-4">ARQUITECTOS DE SOFTWARE
             </h6>
-            <p class="order">Jose Armando Carrillo Valenzuela</p>
+            <p class="order">Manuel Francisco Correa Martinez</p>
+            <p class="order">Guillermo Martinez Fuentes</p>
+            <p class="order">Jayleene Alondra Martinez Moreno</p>
             <p class="order">Kevin Jose Partida Espinoza</p>
-            <p class="order">Keny Alexander Miranda Villegas</p>
           </div>
 
           <div class="col-md-3 text-center mx-auto mb-4">

@@ -10,7 +10,6 @@ function guardarUsuario(){
     if( paterno.length < 1 || materno.length < 1 || nombres.length < 1 ){
         alert("Faltan campos por llenar");
     } else {
-
         //para mandar la informacion a php
         $.post('residencias/controller/alta_usuario.php', { paterno:paterno, materno:materno, nombres:nombres,
             email:email }, function(data){
@@ -20,13 +19,12 @@ function guardarUsuario(){
                     document.getElementById('paterno').value = "";
                     document.getElementById('materno').value = "";
                     document.getElementById('nombres').value = "";
-                    document.getElementById('email').value  = "";
+                    document.getElementById('email').value = "";
                 } else{
                     alert("Error guardando al usuario");
                 }
 
         });
-        
     }
 
 }
