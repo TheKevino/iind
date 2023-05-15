@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../../residencias/img/favicon.ico">
     <title>Agregar asignación</title>
-    <link rel="stylesheet" href="../../residencias/css/jquery'ui.css">
+    <link rel="stylesheet" href="../../residencias/css/jquery-ui.css">
     <script src="../../residencias/js/jquery-ui.js"></script>
     <script src="../../residencias/js/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -88,19 +88,24 @@
 
             <div class="row col-md-12 mt-1">
 
-                <div class="col-md-4 mt-2">
-                    <label for="totalEstudiantes">Total Estudiantes:(*)</label>
-                    <input class="form-control" type="number" name="totalEstudiantes" id="totalEstudiantes">
+                <div class="col-md-3 mt-2">
+                    <label for="totalEstudiantes" required>Total Estudiantes:(*)</label>
+                    <input class="form-control" type="number" name="totalEstudiantes" id="totalEstudiantes" min="0">
                 </div>
 
-                <div class="col-md-4 mt-2">
+                <div class="col-md-3 mt-2">
                     <label for="primeraOp">Aprobados 1ra oportunidad: (*)</label>
-                    <input class="form-control" type="number" name="primeraOp" id="primeraOp">
+                    <input class="form-control" type="number" name="primeraOp" id="primeraOp" min="0">
                 </div>
 
-                <div class="col-md-4 mt-2">
+                <div class="col-md-3 mt-2">
                     <label for="segundaOp">Aprobados 2da oportunidad: (*)</label>
-                    <input class="form-control" type="number" name="segundaOp" id="segundaOp">
+                    <input class="form-control" type="number" name="segundaOp" id="segundaOp" min="0">
+                </div>
+
+                <div class="col-md-3 mt-2">
+                    <label for="numDesertores">Num. desertores: (*)</label>
+                    <input class="form-control" type="number" name="numDesertores" id="numDesertores" min="0">
                 </div>
 
             </div>
@@ -108,49 +113,38 @@
             <div class="row col-md-12 mt-1">
                 <div class="col-md-6 mt-2">
                     <label for="totalAcreditados">Total de acreditados:</label>
-                    <input class="form-control" readonly type="number" name="totalAcreditados" id="totalAcreditados">
+                    <input class="form-control" readonly type="number" name="totalAcreditados" id="totalAcreditados" min="0">
                 </div>
                 <div class="col-md-6 mt-2">
                     <label for="porcentajeAcreditados">% de acreditados:</label>
-                    <input class="form-control" readonly type="number" name="porcentajeAcreditados" id="porcentajeAcreditados">
+                    <input class="form-control" readonly type="number" name="porcentajeAcreditados" id="porcentajeAcreditados" min="0">
                 </div>
             </div>
 
             <div class="row col-md-12 mt-1">
 
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                     <label for="numNoAcreditados">Num. No acreditados:</label>
-                    <input class="form-control" readonly type="number" name="numNoAcreditados" id="numNoAcreditados">
+                    <input class="form-control" readonly type="number" name="numNoAcreditados" id="numNoAcreditados" min="0">
                 </div>
 
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                     <label for="primeraOp">% No acreditados:</label>
-                    <input class="form-control" readonly type="number" name="porcentajeNoAcreditados" id="porcentajeNoAcreditados">
+                    <input class="form-control" readonly type="number" name="porcentajeNoAcreditados" id="porcentajeNoAcreditados" min="0">
                 </div>
 
-                <div class="col-md-3 mt-2">
-                    <label for="numDesertores">Num. desertores: (*)</label>
-                    <input class="form-control" type="number" name="numDesertores" id="numDesertores">
-                </div>
-
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                     <label for="porcentajeDesertores">% desertores:</label>
-                    <input class="form-control" readonly type="number" name="porcentajeDesertores" id="porcentajeDesertores">
+                    <input class="form-control" readonly type="number" name="porcentajeDesertores" id="porcentajeDesertores" min="0">
                 </div>
 
-            </div>
-            
-            <div class="row mt-4">
-                <div class="col-md-8">
-                    <button class="btn btn-primary" id="btnCalcular">Calcular</button>
-                </div>
             </div>
 
         </div><!-- FIN CONTENEDOR -->
 
         <div class="row mt-4">
-            <div class="col-md-8">
-                <button class="btn btn-warning" id="btnGuardar">Guardar</button>
+            <div class="col-md-8 mb-4">
+                <button class="btn btn-success" id="btnGuardar" style="width: 20rem;">Guardar</button>
             </div>
         </div>
 
@@ -179,8 +173,9 @@
 
         alert("No se permiten campos vacios");
 
-    } else if ( totalEstudiantes < 0 || primeraOp < 0 || segundaOp < 0 || totalAcreditados < 0 || porcentajeAcreditados < 0 || numNoAcreditados < 0 ||
-        porcentajeNoAcreditados < 0 || numDesertores < 0 || porcentajeDesertores < 0 ){
+    } else if ( parseInt(totalEstudiantes) < 0 || parseInt(primeraOp) < 0 || parseInt(segundaOp) < 0 || parseInt(totalAcreditados) < 0 || 
+                parseInt(porcentajeAcreditados) < 0 || parseInt(numNoAcreditados) < 0 || parseInt(porcentajeNoAcreditados) < 0 || parseInt(numDesertores) < 0 
+                || parseInt(porcentajeDesertores) < 0 ){
 
         alert("No se permiten valores negativos");
 
