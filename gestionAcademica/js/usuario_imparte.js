@@ -83,14 +83,21 @@ function obtener_registros_usuarios(usuarios) {
         });
 }
 
-$(document).on('click', '#btnBuscarUsuarioClase', function () {
+$(document).on('click', '#btnBuscarUsuarioClase', buscarUsuarioClase);
+$(document).on('keypress', '#buscador_usuario_clase', function(event){
+    if (event.key === "Enter") {
+        buscarUsuarioClase();
+    }
+});
+
+function buscarUsuarioClase(){
     var valorBusqueda = $(document.getElementById('buscador_usuario_clase')).val();
     if (valorBusqueda != "") {
         obtener_registros_usuarios(valorBusqueda);
     } else {
         obtener_registros_usuarios();
     }
-});
+}
 
 //---------PARA LA TABLA DE ASIGNATURAS-----------------
 
@@ -106,16 +113,23 @@ function obtener_registros_materia(materias) {
         });
 }
 
-$(document).on('click', '#btnBuscarMateria', function () {
-    var valorBusqueda = $(document.getElementById('buscador_materia')).val();
+$(document).on('click', '#btnBuscarMateriaImparte', buscarMateriaClase);
+$(document).on('keypress', '#buscador_materia_imparte', function(event){
+    if (event.key === "Enter") {
+        buscarMateriaClase();
+    }
+});
+
+function buscarMateriaClase(){
+    var valorBusqueda = $(document.getElementById('buscador_materia_imparte')).val();
     if (valorBusqueda != "") {
         obtener_registros_materia(valorBusqueda);
     } else {
         obtener_registros_materia();
     }
-});
+}
 
-//---------PARA LA TABLA DE ASIGNATURAS-----------------
+//---------PARA LA TABLA DE GRUPOS-----------------
 
 function obtener_registros_grupo(grupos) {
     $.ajax({
@@ -129,14 +143,21 @@ function obtener_registros_grupo(grupos) {
         });
 }
 
-$(document).on('click', '#btnBuscarGrupo', function () {
-    var valorBusqueda = $(document.getElementById('buscador_grupo')).val();
+$(document).on('click', '#btnBuscarGrupoImparte', buscarGrupoClase);
+$(document).on('keypress', '#buscador_grupo_imparte', function(event){
+    if (event.key === "Enter") {
+        buscarGrupoClase();
+    }
+});
+
+function buscarGrupoClase(){
+    var valorBusqueda = $(document.getElementById('buscador_grupo_imparte')).val();
     if (valorBusqueda != "") {
         obtener_registros_grupo(valorBusqueda);
     } else {
         obtener_registros_grupo();
     }
-});
+}
 
 //-----------ASIGNAR ELEMENTOS ------------
 function asignarDocente(id, nombre) {

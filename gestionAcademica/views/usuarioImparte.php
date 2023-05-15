@@ -96,12 +96,12 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_materia" id="buscador_materia"
+                    <input type="text" class="form-control" name="buscador_materia_imparte" id="buscador_materia_imparte"
                         placeholder="Informacion de la asignatura">
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn-consulta" name="btnBuscarMateria" id="btnBuscarMateria">Buscar</button>
+                    <button class="btn-consulta" name="btnBuscarMateriaImparte" id="btnBuscarMateriaImparte">Buscar</button>
                 </div>
 
             </div>
@@ -124,12 +124,12 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_grupo" id="buscador_grupo"
+                    <input type="text" class="form-control" name="buscador_grupo_imparte" id="buscador_grupo_imparte"
                         placeholder="Informacion del grupo">
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn-consulta" name="btnBuscarGrupo" id="btnBuscarGrupo">Buscar</button>
+                    <button class="btn-consulta" name="btnBuscarGrupoImparte" id="btnBuscarGrupoImparte">Buscar</button>
                 </div>
 
             </div>

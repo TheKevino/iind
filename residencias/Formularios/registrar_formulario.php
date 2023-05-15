@@ -127,19 +127,6 @@
         </div>
 
         <div class="container card card-body col-md-12 mt-4" id="containerTable" style="display:none">
-            <div class="row col-md-12">
-
-                <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_usuario" id="buscador_usuario"
-                        placeholder="Apellidos, nombre, usuario, etc">
-                </div>
-
-                <div class="col-md-2">
-                    <button class="btn btn-secundario btn-block" name="btnBuscarUsuario"
-                        id="btnBuscarUsuario">Buscar</button>
-                </div>
-
-            </div>
 
             <div class="row col-md-12 mt-2">
                 <div class="col-md-4">
@@ -153,6 +140,18 @@
                 <div class="col-md-4">
                     <p>Revisor 2:</p>
                     <input type="text" id="revisor2" readonly class="form-control-plaintext" value="Sin asignar">
+                </div>
+            </div>
+            
+            <div class="row col-md-12 mt-3">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="buscador_usuario" id="buscador_usuario"
+                        placeholder="Apellidos, nombre, usuario, etc">
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-secundario btn-block" name="btnBuscarUsuario"
+                        id="btnBuscarUsuario">Buscar</button>
                 </div>
             </div>
 

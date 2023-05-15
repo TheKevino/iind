@@ -31,14 +31,21 @@ function obtener_registros(usuarios) {
         });
 }
 
-$(document).on('click', '#btnBuscarUsuario', function () {
+$(document).on('click', '#btnBuscarUsuario', buscarUsuarioResidencias);
+$(document).on('keypress', '#buscador_usuario', function(event){
+    if (event.key === "Enter") {
+        buscarUsuarioResidencias();
+    }
+});
+
+function buscarUsuarioResidencias(){
     var valorBusqueda = $(document.getElementById('buscador_usuario')).val();
     if (valorBusqueda != "") {
         obtener_registros(valorBusqueda);
     } else {
         obtener_registros();
     }
-});
+}
 //---------------------------------------------------------
 
 productos.addEventListener('change', () => {

@@ -15,7 +15,7 @@
 
   <div class="contenedor-busqueda">
 
-    <div class="card card-body col-md-8 mt-4 mb-4">
+    <div class="card card-body col-md-12 mt-4 mb-4">
         <div class="row">
           <div class="col-md-8">
             <input type="text" class="form-control" id="buscador_usuario_consulta" name="buscador_usuario_consulta" autocomplete="off" placeholder="Nombre, apellidos, usuario, etc.">

@@ -3,6 +3,10 @@ if (isset($_SESSION['user'])) {
   header('Location: redirection.php?op=0');
 }
 
+if(isset($_GET["r"])){
+  echo "<script>alert('Usuario o contraseña invalidos.')</script>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

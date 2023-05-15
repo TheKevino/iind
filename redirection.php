@@ -127,16 +127,13 @@ if(isset($_SESSION['user'])){
     if($user->userExist($userForm, $passForm)){
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
-
         include_once('menu.php');
     } else {
-        
-        $errorLogin = "Datos incorrectos";
-        header("Location: login.php");
+        header("Location: login.php?r=0");
     }
 
 } else{
-    header("Location: login.php");
+    header("Location: login.php?r=0");
 }
 
 ?>
