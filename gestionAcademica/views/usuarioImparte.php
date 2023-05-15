@@ -1,7 +1,6 @@
 <div>
     <style>
-
-        .contenedor-crear-clase{
+        .contenedor-crear-clase {
             height: auto;
             display: flex;
             justify-content: center;
@@ -9,13 +8,13 @@
             flex-direction: column;
         }
 
-        .pagination{
+        .pagination {
             text-align: center;
             margin: 30px 30px 60px;
             user-select: none;
         }
 
-        .btn-page{
+        .btn-page {
             border: none;
             background-color: transparent;
             color: #1d1b31;
@@ -23,10 +22,9 @@
             margin: 5px;
             padding: 5px 10px;
         }
-
     </style>
     <h3>Crear clase</h3>
-  <!-- Formulario -->
+    <!-- Formulario -->
     <div class="contenedor-crear-clase">
         <div class="pagination">
             <button onclick="paginaDocentes()" class="btn-page">Docente</button>
@@ -35,26 +33,30 @@
             <button onclick="paginaFechas()" class="btn-page">Fecha</button>
         </div>
 
-        <div class="row" id="containerGuardar">
-            <div class="col-md-8">
-                <button class="btn-consulta" onclick="guardarClase()">Guardar</button>
-            </div>
-        </div>
-
         <div class="container card card-body col-md-12 mt-4" id="containerTable">
 
             <div class="row col-md-12 mt-2">
                 <div class="col-md-4">
-                    <p>Docente:</p>
+                    <p>Docente (*)</p>
                     <input type="text" id="docente" readonly class="form-control-plaintext" value="Sin asignar">
                 </div>
                 <div class="col-md-4">
-                    <p>Asignatura:</p>
+                    <p>Asignatura (*)</p>
                     <input type="text" id="asignatura" readonly class="form-control-plaintext" value="Sin asignar">
                 </div>
                 <div class="col-md-4">
-                    <p>Grupo:</p>
+                    <p>Grupo (*)</p>
                     <input type="text" id="grupo" readonly class="form-control-plaintext" value="Sin asignar">
+                </div>
+            </div>
+
+            <div class="row col-md-12 mt-2">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn-consulta mt-3" style="width:100% !important" onclick="guardarClase()">Guardar</button>
+                </div>
+                <div class="col-md-4">
                 </div>
             </div>
 
@@ -66,7 +68,8 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_usuario_clase" id="buscador_usuario_clase" placeholder="Apellidos, nombre, usuario, etc">
+                    <input type="text" class="form-control" name="buscador_usuario_clase" id="buscador_usuario_clase"
+                        placeholder="Apellidos, nombre, usuario, etc">
                 </div>
 
                 <div class="col-md-2">
@@ -76,7 +79,7 @@
             </div>
 
             <div class="row col-md-12 mt-2">
-                
+
                 <div class="col-md-12">
                     <section id="tabla_usuarios_clases">
 
@@ -93,7 +96,8 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_materia" id="buscador_materia" placeholder="Informacion de la asignatura">
+                    <input type="text" class="form-control" name="buscador_materia" id="buscador_materia"
+                        placeholder="Informacion de la asignatura">
                 </div>
 
                 <div class="col-md-2">
@@ -103,7 +107,7 @@
             </div>
 
             <div class="row col-md-12 mt-2">
-                
+
                 <div class="col-md-12">
                     <section id="tabla_materia">
 
@@ -120,7 +124,8 @@
             <div class="row col-md-12">
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="buscador_grupo" id="buscador_grupo" placeholder="Informacion del grupo">
+                    <input type="text" class="form-control" name="buscador_grupo" id="buscador_grupo"
+                        placeholder="Informacion del grupo">
                 </div>
 
                 <div class="col-md-2">
@@ -130,7 +135,7 @@
             </div>
 
             <div class="row col-md-12 mt-2">
-                
+
                 <div class="col-md-12">
                     <section id="tabla_grupos">
 

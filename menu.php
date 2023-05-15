@@ -42,6 +42,8 @@ include 'includes/db.php';
 
     <!-- Extend Icon -->
     <script src="https://kit.fontawesome.com/8eed7147bf.js" crossorigin="anonymous"></script>
+    <!-- Validaciones -->
+    <script src="js/validaciones.js"></script>      
   </head>
   <body>
   <div class="sidebar close">
@@ -194,5 +196,9 @@ include 'includes/db.php';
     <script src="datatable/DataTables/js/dataTables.bulma.min.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/sidebar.js"></script>
+
+    <!-- SweetAlert2 -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
   </body>
 </html>

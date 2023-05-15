@@ -13,5 +13,5 @@
           
   </div>
 
-    <script src="gestionAcademica/js/carreras.js"></script>
+  <script src="gestionAcademica/js/carreras.js"></script>
 </div>

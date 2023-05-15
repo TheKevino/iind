@@ -58,6 +58,11 @@ if (isset($_POST['update_usuario'])) {
 
   <!-- JQuery libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../../js/validaciones.js"></script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
 
   <!-- Extend Icon -->
   <script src="https://kit.fontawesome.com/8eed7147bf.js" crossorigin="anonymous"></script>
@@ -87,33 +92,59 @@ if (isset($_POST['update_usuario'])) {
     }
   </style>
 
+  <script>
+    function validarCamposString() {
+      // Obtener los campos del formulario
+      var apellidoP = document.getElementById("paterno");
+      var apellidoM = document.getElementById("materno");
+      var nombre = document.getElementById("nombres");
+      var email = document.getElementById("email");
+
+      // Verificar si hay campos vacíos
+      if (apellidoP.value == "" || apellidoM.value == "" || nombre.value == "" || email.value == "") {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Faltan campos por llenar',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
+        return false; // Detener el envío del formulario
+      }
+
+      // Si no hay campos vacíos, permitir el envío del formulario
+      return true;
+    }
+  </script>
+
 
   <!-- Formulario -->
-  <form action="editar_usuario.php?id=<?php echo $_GET['id']; ?>" method="post" class="contenedor">
+  <form action="editar_usuario.php?id=<?php echo $_GET['id']; ?>" method="post" class="contenedor"
+    onsubmit="return validarCamposString()">
     <div class="card card-body col-md-8 mt-4">
       <h1>Editar usuario</h1>
       <div class="contenedor">
         <div class="col-md-6 mt-2">
           <label for="paterno">Apellido paterno:</label>
-          <input class="form-control" type="text" name="paterno" placeholder="Apellido paterno"
-            value="<?php echo $paterno; ?>" />
+          <input id="paterno" class="form-control" type="text" name="paterno" placeholder="Apellido paterno"
+            oninput="validarSoloLetras(this.name)" value="<?php echo $paterno; ?>" />
         </div>
 
         <div class="col-md-6 mt-2">
           <label for="materno">Apellido materno:</label>
-          <input class="form-control" type="text" name="materno" placeholder="Apellido materno (opcional)" value="<?php if ($materno != null || $materno != "") {
-            echo $materno;
-          } ?>" />
+          <input id="materno" class="form-control" type="text" name="materno" oninput="validarSoloLetras(this.name)"
+            placeholder="Apellido materno (opcional)" value="<?php if ($materno != null || $materno != "") {
+              echo $materno;
+            } ?>" />
         </div>
 
         <div class="col-md-6 mt-2">
           <label for="nombres">Nombres:</label>
-          <input type="text" class="form-control" name="nombres" placeholder="Nombre(s)"
-            value="<?php echo $nombres; ?>" />
+          <input id="nombres" type="text" class="form-control" name="nombres" placeholder="Nombre(s)"
+            oninput="validarSoloLetras(this.name)" value="<?php echo $nombres; ?>" />
         </div>
         <div class="col-md-6 mt-2">
           <label for="correo">Correo electronico:</label>
-          <input type="email" class="form-control" name="email" placeholder="Correo Electronico"
+          <input id="email" type="email" class="form-control" name="email" placeholder="Correo Electronico"
             value="<?php echo $correo; ?>" />
         </div>
         <div class="row mt-4 centrar">

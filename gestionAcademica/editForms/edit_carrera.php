@@ -41,6 +41,13 @@ if (isset($_POST['btnAgregarCarrera'])) {
   <!-- Extend Icon -->
   <script src="https://kit.fontawesome.com/8eed7147bf.js" crossorigin="anonymous"></script>
 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!-- Validaciones -->
+  <script src="../../js/validaciones.js"></script>
+
 </head>
 
 <body>
@@ -69,14 +76,34 @@ if (isset($_POST['btnAgregarCarrera'])) {
     }
   </style>
 
-  <form class="formulario" action="edit_carrera.php?id=<?= $id; ?> " method="POST">
+  <script>
+    function validarFormulario() {
+      var formulario = document.getElementById("formulario");
+      var carrera = formulario.carrera.value;
+
+      if (carrera === "") {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Faltan campos por llenar.',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+  <form class="formulario" id="formulario" action="edit_carrera.php?id=<?= $id; ?> " method="POST"
+    onsubmit="return validarFormulario()">
     <div class="card card-body">
       <h1>Carreras</h1>
-      
+
       <div class="contenedor">
         <div class="mt-2">
           <input class="form-control" type="text" placeholder="Nombre de la carrera" name="carrera" id="carrera"
-          value="<?php echo $row['nombre']; ?>" />
+            oninput="validarSoloLetras(this.id)" value="<?php echo $row['nombre']; ?>" />
         </div>
       </div>
 

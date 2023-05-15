@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="residencias/css/jquery-ui.css">
     <script src="residencias/js/jquery-ui.js"></script>
     <script src="residencias/js/jquery-3.6.0.min.js"></script>
+    <script src="js/validaciones.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -67,16 +73,19 @@
 
             <div class="row col-md-12">
                 <div class="col-md-6 mt-2">
-                    <input type="text" class="form-control" placeholder="Apellido paterno" name="paterno" id="paterno">
+                    <input type="text" class="form-control" placeholder="Apellido paterno" name="paterno" id="paterno"
+                        oninput="validarSoloLetras(this.name)">
                 </div>
                 <div class="col-md-6 mt-2">
-                    <input type="text" class="form-control" placeholder="Apellido materno" name="materno" id="materno">
+                    <input type="text" class="form-control" placeholder="Apellido materno" name="materno" id="materno"
+                        oninput="validarSoloLetras(this.name)">
                 </div>
             </div>
 
             <div class="row col-md-12 mt-1">
                 <div class="col-md-6 mt-2">
-                    <input type="text" class="form-control" placeholder="Nombre(s)" name="nombres" id="nombres">
+                    <input type="text" class="form-control" placeholder="Nombre(s)" name="nombres" id="nombres"
+                        oninput="validarSoloLetras(this.name)">
                 </div>
                 <div class="col-md-6 mt-2">
                     <input type="number" class="form-control" placeholder="Numero de control" name="nc" id="nc">

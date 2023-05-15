@@ -1,12 +1,17 @@
 
-function agregarGrupo(){
+function agregarGrupo(e){
     
     let selectCarrera = document.getElementById('selectCarrera').value;
     let clave = document.getElementById('clave').value;
     let nombreGrupo = document.getElementById('nombre').value;
 
-    if(nombreGrupo.length < 1 || clave.length < 1){
-        alert("Faltan campos por llenar");
+    if (nombreGrupo.length < 1 || clave.length < 1) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Faltan campos por llenar.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
         e.preventDefault();
     } else {
 
@@ -15,7 +20,14 @@ function agregarGrupo(){
             clave: clave, nombre: nombreGrupo }, function(data){
 
                 if(data!=null){
-                    alert("Grupo guardado");
+
+                    Swal.fire({
+                        title: 'Guardado',
+                        text: 'Grupo guardado',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+
                     document.getElementById('clave').value = "";
                     document.getElementById('nombre').value = "";
                 } else{
