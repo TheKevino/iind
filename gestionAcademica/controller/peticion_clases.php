@@ -57,8 +57,8 @@ if($result->num_rows > 0){
           <td>'.$fechaInicial[2]." de ". $meses[$fechaInicial[1]]." del ".$fechaInicial[0].'</td>
           <td>'.$fechaFinal[2]." de ". $meses[$fechaFinal[1]]." del ".$fechaFinal[0].'</td>
           <td>
-              <a href="gestionAcademica/controller/baja_clase.php?id='.$row['idClase'].'">
-                <button class="btn-consulta" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+              <a>
+                <button class="btn-consulta" onclick="borrarClase('.$row['idClase'].')"><i class="fas fa-trash"></i></button>
               </a>
 
           </td>

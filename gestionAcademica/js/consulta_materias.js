@@ -26,3 +26,20 @@ function buscarMateriaConsulta(){
         obtener_registros_materias_consulta();
     }
 }
+
+function borrarMateria(id){
+    let respuesta = confirm("Seguro(a) que quieres eliminar la asignatura?");
+
+    if(respuesta){
+        $.ajax({
+            url: 'gestionAcademica/controller/baja_materia.php',
+            type: 'POST',
+            dataType: 'html',
+            data: { id: id }
+        })
+        .done(function(){
+            buscarMateriaConsulta()
+        });
+    }
+
+}

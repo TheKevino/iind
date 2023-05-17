@@ -3,7 +3,7 @@
     include("../../includes/db.php");
 
         
-        $id = $_GET['id'];
+        $id = $_POST['id'];
 
         //Borrar usuario
         $query = "DELETE FROM usuarios WHERE idUsuario = $id";
@@ -21,8 +21,5 @@
         if($row['firmaQR'] != null){
             unlink("../".$row['firmaQR']);
         }
-
-        header("Location: ../../redirection.php");
-
 
 ?>

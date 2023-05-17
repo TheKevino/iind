@@ -25,3 +25,20 @@ function buscarClaseConsulta(){
         obtener_registros();
     }
 }
+
+function borrarClase(id){
+    let respuesta = confirm("Seguro(a) que quieres eliminar la clase?");
+
+    if(respuesta){
+        $.ajax({
+            url: 'gestionAcademica/controller/baja_clase.php',
+            type: 'POST',
+            dataType: 'html',
+            data: { id: id }
+        })
+        .done(function(){
+            buscarClaseConsulta()
+        });
+    }
+
+}

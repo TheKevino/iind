@@ -31,8 +31,8 @@ if($result->num_rows > 0){
                 <i class="fas fa-marker"></i>
               </a>
 
-              <a href="gestionAcademica/controller/bajaCarrera.php?id='.$row['idCarrera'].'">
-                <button class="btn" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+              <a>
+                <button class="btn" onclick="borrarCarrera('.$row['idCarrera'].')"><i class="fas fa-trash"></i></button>
               </a>
 
           </td>
@@ -48,11 +48,3 @@ if($result->num_rows > 0){
 echo $tabla;
 
 ?>
-
-<script>
-    function confirmacion(){   
-        let respuesta = confirm("Seguro(a) que quieres eliminar la carrera?");
-        
-        return respuesta;
-    }
-</script>

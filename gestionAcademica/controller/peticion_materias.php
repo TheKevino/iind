@@ -42,8 +42,8 @@ if($result->num_rows > 0){
                     <i class="fas fa-marker"></i>
                 </a>
 
-                <a class="m-1" href="gestionAcademica/controller/baja_materia.php?id='.$row['idMateria'].'">
-                    <button class="btn" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+                <a class="m-1">
+                    <button class="btn" onclick="borrarMateria('.$row['idMateria'].')"><i class="fas fa-trash"></i></button>
                 </a>
 
           </td>
@@ -59,11 +59,3 @@ if($result->num_rows > 0){
 echo $tabla;
 
 ?>
-
-<script>
-    function confirmacion(){   
-        let respuesta = confirm("Seguro(a) que quieres eliminar la asignatura?");
-        
-        return respuesta;
-    }
-</script>

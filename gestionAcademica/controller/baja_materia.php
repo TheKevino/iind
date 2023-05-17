@@ -3,7 +3,9 @@
     include("../../includes/db.php");
 
         
-        $id = $_GET['id'];
+        $id = $_POST['id'];
+
+        echo("alert($id)");
 
         $query = "DELETE FROM materias WHERE idMateria = $id";
 
@@ -12,7 +14,5 @@
         if(!$result){
             die("Query failed");
         }
-        header("Location: ../../redirection.php");
-
 
 ?>

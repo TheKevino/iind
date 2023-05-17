@@ -25,3 +25,20 @@ function buscarCarreraConsulta(){
         obtener_registros_carreras_consulta();
     }
 }
+
+function borrarCarrera(id){
+    let respuesta = confirm("Seguro(a) que quieres eliminar la carrera?");
+
+    if(respuesta){
+        $.ajax({
+            url: 'gestionAcademica/controller/bajaCarrera.php',
+            type: 'POST',
+            dataType: 'html',
+            data: { id: id }
+        })
+        .done(function(){
+            buscarCarreraConsulta()
+        });
+    }
+
+}

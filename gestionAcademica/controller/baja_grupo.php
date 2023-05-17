@@ -3,7 +3,7 @@
     include("../../includes/db.php");
 
         
-        $id = $_GET['id'];
+        $id = $_POST['id'];
 
         $query = "DELETE FROM grupos WHERE idGrupo = $id";
 
@@ -12,5 +12,4 @@
         if(!$result){
             die("Query failed");
         }
-        header("Location: ../../redirection.php");
 ?>

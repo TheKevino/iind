@@ -3,7 +3,7 @@
     include("../../includes/db.php");
 
         
-        $id = $_GET['id'];
+        $id = $_POST['id'];
 
         $query = "DELETE FROM carreras WHERE idCarrera = $id";
 

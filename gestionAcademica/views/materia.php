@@ -95,8 +95,7 @@ if (!$result) {
       </div>
     </div>
 
-    <button onclick="agregarMateria()" class="button btn m-2" name="btnAgregarMateria" id="btnAgregarMateria">Nuevo
-      agregar</button>
+    <button onclick="agregarMateria()" class="button btn m-2" name="btnAgregarMateria" id="btnAgregarMateria">Agregar</button>
   </div>
 
   <script src="gestionAcademica/js/materias.js"></script>

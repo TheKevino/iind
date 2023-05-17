@@ -25,3 +25,20 @@ function buscarUsuarioConsulta(){
         obtener_registros_usuarios_consulta();
     }
 }
+
+function borrarUsuario(id){
+    let respuesta = confirm("Seguro(a) que quieres eliminar al usuario?");
+
+    if(respuesta){
+        $.ajax({
+            url: 'residencias/controller/baja_usuario.php',
+            type: 'POST',
+            dataType: 'html',
+            data: { id: id }
+        })
+        .done(function(){
+            buscarUsuarioConsulta()
+        });
+    }
+
+}

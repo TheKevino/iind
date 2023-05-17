@@ -43,8 +43,8 @@ if($result->num_rows > 0){
                 <i class="fas fa-marker"></i>
               </a>
 
-              <a href="residencias/controller/baja_usuario.php?id='.$row['idUsuario'].'">
-                <button class="btn" onclick="return confirmacion()"><i class="fas fa-trash"></i></button>
+              <a>
+                <button class="btn" onclick="borrarUsuario('.$row['idUsuario'].')"><i class="fas fa-trash"></i></button>
               </a>
 
               <a class="btn" href="residencias/controller/recuperar_info.php?id='.$row['idUsuario'].'"">
