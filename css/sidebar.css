@@ -277,7 +277,7 @@
     width: 260px;
   }
   .sidebar.close{
-    width: 0;
+    display: none;
   }
   .home-section{
     left: 260px;
@@ -285,7 +285,7 @@
     z-index: 100;
   }
   .sidebar.close ~ .home-section{
-    width: 100%;
+    width: 88%;
     left: 0;
   }
 }
