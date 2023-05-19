@@ -156,11 +156,11 @@
 
                 <div class="col-md-6">
                     <label for="fecha_inicio">Fecha de inicio del semestre:</label>
-                    <input type="date" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio" min="<?php echo $anio;?>-01-01" max="2023-12-31">
+                    <input type="date" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio" min="<?php echo $anio;?>-01-01" max="<?php echo $anio;?>-12-31">
                 </div>
                 <div class="col-md-6">
                     <label for="fecha_fin">Fecha de terminacion del semestre:</label>
-                    <input type="date" class="form-control" id="fecha_fin" placeholder="Fecha de terminacion" min="<?php echo $anio;?>-01-01" max="2023-12-31">
+                    <input type="date" class="form-control" id="fecha_fin" placeholder="Fecha de terminacion" min="<?php echo $anio;?>-01-01" max="<?php echo $anio;?>-12-31">
                 </div>
 
             </div>

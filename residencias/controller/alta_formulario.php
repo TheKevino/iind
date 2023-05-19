@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $query);
 if(!$result){
     die("Query failed");
 }
-
+/*
 $mail = new PHPMailer(true);
 
 try{
@@ -54,5 +54,6 @@ try{
 }
 
 header("Location: ../../redirection.php?op=5");
+*/
 
 ?>
