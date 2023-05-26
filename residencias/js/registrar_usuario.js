@@ -5,12 +5,21 @@ function guardarUsuario() {
     let materno = document.getElementById('materno').value;
     let nombres = document.getElementById('nombres').value;
     let email = document.getElementById('email').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     //verificanodo que los campos esten llenos
     if (paterno.length < 1 || materno.length < 1 || nombres.length < 1) {
         Swal.fire({
             title: 'Error!',
             text: 'Faltan campos por llenar.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+    } else if( email.length > 0 && !emailRegex.test(email) ){
+        const emailValido = 
+        Swal.fire({
+            title: 'Error!',
+            text: 'Formato de correo incorrecto.',
             icon: 'error',
             confirmButtonText: 'Ok'
         })
