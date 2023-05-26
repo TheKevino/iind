@@ -16,7 +16,6 @@ function guardarUsuario() {
             confirmButtonText: 'Ok'
         })
     } else if( email.length > 0 && !emailRegex.test(email) ){
-        const emailValido = 
         Swal.fire({
             title: 'Error!',
             text: 'Formato de correo incorrecto.',
