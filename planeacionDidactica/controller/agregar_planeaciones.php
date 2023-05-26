@@ -38,8 +38,6 @@ while($rowUsuarios = mysqli_fetch_array($resultUsuarios)){
 
                     if(!$resultCorreccion){
                         echo mysqli_error($conn);
-                    } else {
-                        echo "Revisale papu";
                     }
                     
                 }

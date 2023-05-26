@@ -33,23 +33,35 @@
             <button onclick="paginaDocentes()" class="btn-page">Docente</button>
             <button onclick="paginaMaterias()" class="btn-page">Asignatura</button>
             <button onclick="paginaGrupos()" class="btn-page">Grupo</button>
-            <button onclick="paginaFechas()" class="btn-page">Fecha</button>
         </div>
 
         <div class="container card card-body col-md-12 mt-4" id="containerTable">
 
             <div class="row col-md-12 mt-2">
                 <div class="col-md-4">
-                    <p>Docente (*)</p>
+                    <label for="docente">Docente <span style="color: red;">*</span></label>
                     <input type="text" id="docente" readonly class="form-control-plaintext" value="Sin asignar">
                 </div>
                 <div class="col-md-4">
-                    <p>Asignatura (*)</p>
+                    <label for="asignatura">Asignatura <span style="color: red;">*</span></label>
                     <input type="text" id="asignatura" readonly class="form-control-plaintext" value="Sin asignar">
                 </div>
                 <div class="col-md-4">
-                    <p>Grupo (*)</p>
+                    <labelp for="grupo">Grupo <span style="color: red;">*</span></label>
                     <input type="text" id="grupo" readonly class="form-control-plaintext" value="Sin asignar">
+                </div>
+            </div>
+
+            <!---------------------------------------------------------------------------------------------------------------------->
+            <!-------------------------------------------- ASIGNAR FECHA ----------------------------------------------------------->
+            <div class="row col-md-12 mt-4">
+                <div class="col-md-6">
+                    <label for="fecha_inicio">Fecha de inicio del semestre <span style="color: red;">*</span></label>
+                    <input type="date" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio" min="<?php echo $anio;?>-01-01" max="<?php echo $anio;?>-12-31">
+                </div>
+                <div class="col-md-6">
+                    <label for="fecha_fin">Fecha de terminacion del semestre <span style="color: red;">*</span></label>
+                    <input type="date" class="form-control" id="fecha_fin" placeholder="Fecha de terminacion" min="<?php echo $anio;?>-01-01" max="<?php echo $anio;?>-12-31">
                 </div>
             </div>
 
@@ -64,7 +76,7 @@
             </div>
 
         </div>
-
+        <!---------------------------------------------------------------------------------------------------------------------->
         <!-------------------------------------------- TABLA PARA ESCOGER DOCENTE ---------------------------------------------->
         <div class="container card card-body col-md-12 mt-4" id="containerDocentes">
             <h3>Docente</h3>
@@ -143,24 +155,6 @@
                     <section id="tabla_grupos">
 
                     </section>
-                </div>
-
-            </div>
-
-        </div>
-        <!---------------------------------------------------------------------------------------------------------------------->
-        <!-------------------------------------------- ASIGNAR FECHA ----------------------------------------------------------->
-        <div class="container card card-body col-md-12 mt-4" id="containerFechas" style="display:none;">
-            <h3>Fechas</h3>
-            <div class="row col-md-12">
-
-                <div class="col-md-6">
-                    <label for="fecha_inicio">Fecha de inicio del semestre:</label>
-                    <input type="date" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio" min="<?php echo $anio;?>-01-01" max="<?php echo $anio;?>-12-31">
-                </div>
-                <div class="col-md-6">
-                    <label for="fecha_fin">Fecha de terminacion del semestre:</label>
-                    <input type="date" class="form-control" id="fecha_fin" placeholder="Fecha de terminacion" min="<?php echo $anio;?>-01-01" max="<?php echo $anio;?>-12-31">
                 </div>
 
             </div>

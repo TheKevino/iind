@@ -54,7 +54,7 @@
 
             <h2>Asignaturas programas 2009-2010</h2>
             <h4>Notas importantes:</h4>
-            <p>1 -. (*) Son los campos que se llenan manualmente. El resto se calcula automaticamente.</p>
+            <p>1 -. <span style="color: red;">*</span> Son los campos que se llenan manualmente. El resto se calcula automaticamente.</p>
             <p>2 -. En el total de estudiantes incluir tambien a los estudiantes que desertaron.</p>
             <p>Entendiendo como estudiante desertor al que toma la decisión de no presentar exámenes de primera o segunda oportunidad aun teniendo derecho a ellos.</p>
             <p>3 -.Los estudiantes que se incluirán en el Num. de estudiantes no acreditados son todos los estudiantes no acreditados incluyendo los desertores.</p>
@@ -89,22 +89,22 @@
             <div class="row col-md-12 mt-1">
 
                 <div class="col-md-3 mt-2">
-                    <label for="totalEstudiantes" required>Total Estudiantes:(*)</label>
+                    <label for="totalEstudiantes" required>Total Estudiantes: <span style="color: red;">*</span></label>
                     <input class="form-control" type="number" name="totalEstudiantes" id="totalEstudiantes" min="0">
                 </div>
 
                 <div class="col-md-3 mt-2">
-                    <label for="primeraOp">Aprobados 1ra oportunidad: (*)</label>
+                    <label for="primeraOp">Aprobados 1ra oportunidad: <span style="color: red;">*</span></label>
                     <input class="form-control" type="number" name="primeraOp" id="primeraOp" min="0">
                 </div>
 
                 <div class="col-md-3 mt-2">
-                    <label for="segundaOp">Aprobados 2da oportunidad: (*)</label>
+                    <label for="segundaOp">Aprobados 2da oportunidad: <span style="color: red;">*</span></label>
                     <input class="form-control" type="number" name="segundaOp" id="segundaOp" min="0">
                 </div>
 
                 <div class="col-md-3 mt-2">
-                    <label for="numDesertores">Num. desertores: (*)</label>
+                    <label for="numDesertores">Num. desertores: <span style="color: red;">*</span></label>
                     <input class="form-control" type="number" name="numDesertores" id="numDesertores" min="0">
                 </div>
 

@@ -20,6 +20,6 @@ if(!$result){
     die("Query failed");
 }
 
-header("Location: ../../redirection.php?op=19");
+header("Location: ../../redirection.php");
 
 ?>

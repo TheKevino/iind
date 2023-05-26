@@ -27,8 +27,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../../residencias/img/favicon.ico">
-    <title>Editar asignación</title>
-    <link rel="stylesheet" href="../../residencias/css/jquery'ui.css">
+    <title>Agregar asignación</title>
+    <link rel="stylesheet" href="../../residencias/css/jquery-ui.css">
     <script src="../../residencias/js/jquery-ui.js"></script>
     <script src="../../residencias/js/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -60,7 +60,7 @@
 
             <h2>Asignaturas programas 2009-2010</h2>
             <h4>Notas importantes:</h4>
-            <p>1 -. (*) Son los campos que se llenan manualmente. El resto se calcula automaticamente.</p>
+            <p>1 -. <span style="color: red;">*</span> Son los campos que se llenan manualmente. El resto se calcula automaticamente.</p>
             <p>2 -. En el total de estudiantes incluir tambien a los estudiantes que desertaron.</p>
             <p>Entendiendo como estudiante desertor al que toma la decisión de no presentar exámenes de primera o segunda oportunidad aun teniendo derecho a ellos.</p>
             <p>3 -.Los estudiantes que se incluirán en el Num. de estudiantes no acreditados son todos los estudiantes no acreditados incluyendo los desertores.</p>
@@ -73,10 +73,7 @@
                     <select class="form-select" name="comboAsignatura" id="comboAsignatura" >
                     <?php while($row = mysqli_fetch_array($resultMaterias)){ ?>
 
-                        <option <?php 
-                                if( $rowAsignProg['asignatura'] == $row['materia'] ){
-                                    echo "selected";
-                                }?> value="<?= $row['materia']; ?>" ><?= utf8_decode($row['materia']); ?></option>
+                        <option value="<?= $row['materia']; ?>" ><?= utf8_decode($row['materia']); ?></option>
                         
                     <?php } ?>
                     </select>
@@ -87,10 +84,7 @@
                     <select class="form-select" name="comboCarrera" id="comboCarrera" >
                     <?php while($row = mysqli_fetch_array($resultCarreras)){ ?>
 
-                        <option <?php 
-                                if( $rowAsignProg['carrera'] == $row['nombre'] ){
-                                    echo "selected";
-                                }?> value="<?= $row['nombre']; ?>"><?= $row['nombre']; ?></option>
+                        <option value="<?= $row['nombre']; ?>"><?= $row['nombre']; ?></option>
                         
                     <?php } ?>
                     </select>
@@ -100,19 +94,24 @@
 
             <div class="row col-md-12 mt-1">
 
-                <div class="col-md-4 mt-2">
-                    <label for="totalEstudiantes">Total Estudiantes:(*)</label>
-                    <input class="form-control" type="number" name="totalEstudiantes" id="totalEstudiantes" value="<?= $rowAsignProg['totalEstudiantes']; ?>" >
+                <div class="col-md-3 mt-2">
+                    <label for="totalEstudiantes" required>Total Estudiantes: <span style="color: red;">*</span></label>
+                    <input class="form-control" type="number" name="totalEstudiantes" id="totalEstudiantes" min="0" value="<?= $rowAsignProg['totalEstudiantes']; ?>">
                 </div>
 
-                <div class="col-md-4 mt-2">
-                    <label for="primeraOp">Aprobados 1ra oportunidad: (*)</label>
-                    <input class="form-control" type="number" name="primeraOp" id="primeraOp" value="<?= $rowAsignProg['primeraOp']; ?>">
+                <div class="col-md-3 mt-2">
+                    <label for="primeraOp">Aprobados 1ra oportunidad: <span style="color: red;">*</span></label>
+                    <input class="form-control" type="number" name="primeraOp" id="primeraOp" min="0" value="<?= $rowAsignProg['primeraOp']; ?>">
                 </div>
 
-                <div class="col-md-4 mt-2">
-                    <label for="segundaOp">Aprobados 2da oportunidad: (*)</label>
-                    <input class="form-control" type="number" name="segundaOp" id="segundaOp" value="<?= $rowAsignProg['segundaOp']; ?>">
+                <div class="col-md-3 mt-2">
+                    <label for="segundaOp">Aprobados 2da oportunidad: <span style="color: red;">*</span></label>
+                    <input class="form-control" type="number" name="segundaOp" id="segundaOp" min="0" value="<?= $rowAsignProg['segundaOp']; ?>">
+                </div>
+
+                <div class="col-md-3 mt-2">
+                    <label for="numDesertores">Num. desertores: <span style="color: red;">*</span></label>
+                    <input class="form-control" type="number" name="numDesertores" id="numDesertores" min="0" value="<?= $rowAsignProg['desertores']; ?>">
                 </div>
 
             </div>
@@ -120,49 +119,38 @@
             <div class="row col-md-12 mt-1">
                 <div class="col-md-6 mt-2">
                     <label for="totalAcreditados">Total de acreditados:</label>
-                    <input class="form-control" readonly type="number" name="totalAcreditados" id="totalAcreditados" value="<?= $rowAsignProg['totalAcreditados']; ?>">
+                    <input class="form-control" readonly type="number" name="totalAcreditados" id="totalAcreditados" min="0" value="<?= $rowAsignProg['totalAcreditados']; ?>">
                 </div>
                 <div class="col-md-6 mt-2">
                     <label for="porcentajeAcreditados">% de acreditados:</label>
-                    <input class="form-control" readonly type="number" name="porcentajeAcreditados" id="porcentajeAcreditados" value="<?= $rowAsignProg['porcentajeAcreditados']; ?>">
+                    <input class="form-control" readonly type="number" name="porcentajeAcreditados" id="porcentajeAcreditados" min="0" value="<?= $rowAsignProg['porcentajeAcreditados']; ?>">
                 </div>
             </div>
 
             <div class="row col-md-12 mt-1">
 
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                     <label for="numNoAcreditados">Num. No acreditados:</label>
-                    <input class="form-control" readonly type="number" name="numNoAcreditados" id="numNoAcreditados" value="<?= $rowAsignProg['estudiantesNoAcreditados']; ?>">
+                    <input class="form-control" readonly type="number" name="numNoAcreditados" id="numNoAcreditados" min="0" value="<?= $rowAsignProg['estudiantesNoAcreditados']; ?>">
                 </div>
 
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                     <label for="primeraOp">% No acreditados:</label>
-                    <input class="form-control" readonly type="number" name="porcentajeNoAcreditados" id="porcentajeNoAcreditados" value="<?= $rowAsignProg['porcentajeNoAcreditados']; ?>">
+                    <input class="form-control" readonly type="number" name="porcentajeNoAcreditados" id="porcentajeNoAcreditados" min="0" value="<?= $rowAsignProg['porcentajeNoAcreditados']; ?>">
                 </div>
 
-                <div class="col-md-3 mt-2">
-                    <label for="numDesertores">Num. desertores: (*)</label>
-                    <input class="form-control" type="number" name="numDesertores" id="numDesertores" value="<?= $rowAsignProg['desertores']; ?>">
-                </div>
-
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                     <label for="porcentajeDesertores">% desertores:</label>
-                    <input class="form-control" readonly type="number" name="porcentajeDesertores" id="porcentajeDesertores" value="<?= $rowAsignProg['porcentajeDesertores']; ?>">
+                    <input class="form-control" readonly type="number" name="porcentajeDesertores" id="porcentajeDesertores" min="0"  value="<?= $rowAsignProg['porcentajeDesertores']; ?>">
                 </div>
 
-            </div>
-            
-            <div class="row mt-4">
-                <div class="col-md-8">
-                    <button class="btn btn-primary" id="btnCalcular">Calcular</button>
-                </div>
             </div>
 
         </div><!-- FIN CONTENEDOR -->
 
         <div class="row mt-4">
-            <div class="col-md-8">
-                <button class="btn btn-warning" id="btnGuardar">Guardar</button>
+            <div class="col-md-8 mb-4">
+                <button class="btn btn-success" id="btnGuardar" style="width: 20rem;">Guardar</button>
             </div>
         </div>
 

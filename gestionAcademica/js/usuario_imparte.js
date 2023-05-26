@@ -2,7 +2,6 @@
 let containerDocentes = document.getElementById('containerDocentes');
 let containerMaterias = document.getElementById('containerMaterias');
 let containerGrupos = document.getElementById('containerGrupos');
-let containerFechas = document.getElementById('containerFechas');
 let containerGuardar = document.getElementById('containerGuardar');
 let containerTable = document.getElementById('containerTable');
 
@@ -28,7 +27,6 @@ function paginaDocentes() {
     containerDocentes.style.display = 'block';
     containerMaterias.style.display = 'none';
     containerGrupos.style.display = 'none';
-    containerFechas.style.display = 'none';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
 }
@@ -37,7 +35,6 @@ function paginaMaterias() {
     containerDocentes.style.display = 'none';
     containerMaterias.style.display = 'block';
     containerGrupos.style.display = 'none';
-    containerFechas.style.display = 'none';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
 }
@@ -46,27 +43,8 @@ function paginaGrupos() {
     containerDocentes.style.display = 'none';
     containerMaterias.style.display = 'none';
     containerGrupos.style.display = 'block';
-    containerFechas.style.display = 'none';
     containerGuardar.style.display = 'block';
     containerTable.style.display = 'block';
-}
-
-function paginaFechas() {
-    containerDocentes.style.display = 'none';
-    containerMaterias.style.display = 'none';
-    containerGrupos.style.display = 'none';
-    containerFechas.style.display = 'block';
-    containerGuardar.style.display = 'block';
-    containerTable.style.display = 'block';
-}
-
-function paginaExcel() {
-    containerDocentes.style.display = 'none';
-    containerMaterias.style.display = 'none';
-    containerGrupos.style.display = 'none';
-    containerFechas.style.display = 'none';
-    containerGuardar.style.display = 'none';
-    containerTable.style.display = 'none';
 }
 
 //---------PARA LA TABLA DE USUARIOS/DOCENTES-----------------
@@ -213,14 +191,21 @@ function guardarClase() {
         }, function (data) {
 
             if (data != null) {
-                alert("Clase guardada");
+                
+                Swal.fire({
+                    title: 'Ok!',
+                    text: 'Clase guardada',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+
                 asignarDocente(null, null);
                 asignarMateria(null, null);
                 asignarGrupo(null, null, null);
 
                 document.getElementById("buscador_usuario_clase").value = "";
-                document.getElementById("buscador_materia").value = "";
-                document.getElementById("buscador_grupo").value = "";
+                document.getElementById("buscador_materia_imparte").value = "";
+                document.getElementById("buscador_grupo_imparte").value = "";
 
                 document.getElementById("docente").value = "Sin asignar";
                 document.getElementById("asignatura").value = "Sin asignar";
