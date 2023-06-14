@@ -9,7 +9,7 @@ $resultGrupo = mysqli_query($conn, $queryGrupo);
 $rowGrupo = mysqli_fetch_array($resultGrupo);
 
 $resultado = "<label>Grupo:</label>";
-$resultado .= "<select class='form-select' name='selectGrupo' id='selectGrupo'>";
+$resultado .= "<select class='form-select' name='selectGrupo' id='selectGrupo' readonly>";
 $resultado .= "<option value = ".$rowGrupo['nombre'].">";
 $resultado .= $rowGrupo["nombre"];
 $resultado .= "</option>";

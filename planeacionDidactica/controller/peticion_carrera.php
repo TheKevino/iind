@@ -9,7 +9,7 @@ $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
 
 $resultado = "<label>Carrera:</label>";
-$resultado .= "<select class='form-select' name='selectCarrera' id='selectCarrera'>";
+$resultado .= "<select class='form-select' name='selectCarrera' id='selectCarrera' readonly>";
 $resultado .= "<option value = ".$row['idCarrera'].">";
 $resultado .= $row["nombre"];
 $resultado .= "</option>";

@@ -198,7 +198,7 @@
 
 			  	<li class="nav-item">
 					<a class="nav-link active" aria-current="page"  href="planeacionDidactica/controller/duplicar_planeacion.php?idplaneacion='.$idPlaneacion.'">
-						Duplicar archivo
+						Duplicar Planeacion
 					</a>
 				</li>
 

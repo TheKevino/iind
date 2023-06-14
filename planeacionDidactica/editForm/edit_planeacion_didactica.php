@@ -85,7 +85,7 @@ $resultCarreras = mysqli_query($conn, $queryCarreras);
                     <label for="selectMateria">Asignatura:</label>
 
                     <select class="form-select" name="selectMateria" id="selectMateria">
-                        <!-- PARTE PARA LLENAR EL SELECT DEL FORMULARIO CON LAS CARRERAS -->
+                        <!-- PARTE PARA LLENAR EL SELECT DEL FORMULARIO CON LAS ASIGNATURAS -->
                         <?php while ($rowMaterias = mysqli_fetch_array($resultMaterias)) { ?>
 
                             <option <?= $rowPlaneacion['idMateria'] == $rowMaterias['idMateria'] ? "selected" : ""; ?>

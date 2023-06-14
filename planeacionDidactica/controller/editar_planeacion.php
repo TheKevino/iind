@@ -19,6 +19,6 @@ grupo = '$grupo', aula = '$aula', noSemanas = '$semana' WHERE idPlaneacion=$idPl
 
 $result = mysqli_query($conn, $query);
 
-header("Location: ../editForm/edit_planeacion_didactica.php?id=".base64_encode($idPlaneacion)."&idu=".base64_encode($idUsuario));
+header("Location: ../../redirection.php");
 
 ?>
