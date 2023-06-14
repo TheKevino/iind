@@ -236,7 +236,7 @@ if($resultTemas->num_rows > 0){
         //Informacion complementaria
         //Query para la informacion complementaria de los temas
         $queryInfoTemas = "SELECT idInfo, actsEnsenanza, fechaInicial, fechaFinal, apOpUno, apOpDos FROM infotemas
-        WHERE idTema = $idTemaLocal AND idUsuario = $idUsuario";
+        WHERE idTema = $idTemaLocal AND idUsuario = $idUsuario AND idPlaneacion = $idPlaneacion";
 
         $resultInfoTemas = mysqli_query($conn, $queryInfoTemas);
         $hayInfo = $resultInfoTemas->num_rows > 0 ? true : false ;

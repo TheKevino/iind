@@ -184,31 +184,37 @@
 			<a class="nav-link nav-title drop-op" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bx bx-dots-vertical-rounded"></i></a>
 			<ul class="dropdown-menu">
 
-			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="planeacionDidactica/views/ver_planeacion.php?id='.$idPlaneacion.'&idu='.$idUser.'" target="_blank">
-					Ver y redactar
-				</a>
-			  </li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="planeacionDidactica/views/ver_planeacion.php?id='.$idPlaneacion.'&idu='.$idUser.'" target="_blank">
+						Ver y redactar
+					</a>
+				</li>
 
-			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page"  href="planeacionDidactica/editForm/edit_planeacion_didactica.php?id='.$idPlaneacion.'&idu='.base64_encode($aRow['idUsuario']).'" target="_blank">
-					Editar
-				</a>
-			  </li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page"  href="planeacionDidactica/editForm/edit_planeacion_didactica.php?id='.$idPlaneacion.'&idu='.base64_encode($aRow['idUsuario']).'" target="_blank">
+						Editar
+					</a>
+				</li>
 
-			  <li class="nav-item">
-				<a href="planeacionDidactica/controller/baja_planeacion.php?id='.$idPlaneacion.'">
-					<button class="btn-dropdown nav-link" onclick="return confirmacion()">
-						Borrar
-					</button>
-		  		</a>
-			</li>
+			  	<li class="nav-item">
+					<a class="nav-link active" aria-current="page"  href="planeacionDidactica/controller/duplicar_planeacion.php?idplaneacion='.$idPlaneacion.'">
+						Duplicar archivo
+					</a>
+				</li>
 
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="planeacionDidactica/pdfs/planeacion_tcpdf.php?id='.$idPlaneacion.'&idu='.base64_encode($aRow['idUsuario']).'" target="_blank">
-					PDF
-				</a>
-		  	</li>
+			  	<li class="nav-item">
+					<a href="planeacionDidactica/controller/baja_planeacion.php?id='.$idPlaneacion.'">
+						<button class="btn-dropdown nav-link" onclick="return confirmacion()">
+							Borrar
+						</button>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="planeacionDidactica/pdfs/planeacion_tcpdf.php?id='.$idPlaneacion.'&idu='.base64_encode($aRow['idUsuario']).'" target="_blank">
+						PDF
+					</a>
+				</li>
 
 			</ul>
 		  </li>';
